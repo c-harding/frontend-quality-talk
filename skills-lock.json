@@ -13,8 +13,10 @@
     },
     "slidev-qaware-theme": {
       "source": "qaware-internal/slidev-theme-qaware",
+      "ref": "community-theme",
       "sourceType": "github",
-      "computedHash": "bd06e766671421ed2359d70104c8b3af292b26275de13c5beca41d162b207925"
+      "skillPath": "skills/slidev-qaware-theme/SKILL.md",
+      "computedHash": "0c24dfb3f5c42f0131c8d9c6e3a122bb9ea5cf0ebdc7a86a2b977eead8935561"
     }
   }
 }

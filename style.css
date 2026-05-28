@@ -9,10 +9,16 @@
   }
 
   h4 {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 
   > h3:not(:first-child) {
     margin-top: 0.5em;
   }
+}
+
+.slidev-content {
+  font-size: 1.2em;
+  --slidev-code-font-size: 1.2em;
+  --slidev-code-line-height: 1.4em;
 }

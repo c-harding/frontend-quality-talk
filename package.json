@@ -1,5 +1,5 @@
 {
-  "name": "heatmapper-talk",
+  "name": "frontend-quality-talk",
   "type": "module",
   "private": true,
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "@qaware-internal/slidev-theme-qaware": "^1.6.0",
+    "@qaware-internal/slidev-theme-qaware": "github:qaware-internal/slidev-theme-qaware#community-theme",
     "@slidev/cli": "^52.14.1",
     "@slidev/client": "^52.14.2",
     "qrcode": "^1.5.4",

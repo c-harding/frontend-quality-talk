@@ -18,6 +18,9 @@
       <entry key="_/Users/c.harding/Documents/QAware/ec26/frontend-quality" value="3ELTS1aQIdMXWjlVx4wZ7Sb4PhW" />
     </persistenceIdMap>
   </component>
+  <component name="CopilotUserSelectedChatMode">
+    <option name="chatModeId" value="Agent" />
+  </component>
   <component name="CopilotUserSelectedModel">
     <selectedModels>
       <entry key="agent-panel" value="Claude Opus 4.6" />
@@ -86,12 +89,36 @@
       <updated>1779956846077</updated>
       <workItem from="1779956847164" duration="69000" />
       <workItem from="1779956958333" duration="109000" />
-      <workItem from="1779957070412" duration="915000" />
+      <workItem from="1779957070412" duration="15566000" />
     </task>
+    <task id="LOCAL-00001" summary="Add template from heatmapper talk">
+      <option name="closed" value="true" />
+      <created>1779958061069</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779958061069</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add template from heatmapper talk" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add template from heatmapper talk" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

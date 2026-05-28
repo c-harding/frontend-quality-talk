@@ -1,11 +1,10 @@
 ---
-layout: chapter
-title: Takeaways
+layout: chapter-split
+title: Learnings / Q&A
+chapter-number: '07'
 section:
   duration: 1m
 ---
-
-Learnings für Hobby-Projekte und Enterprise-Software
 
 <!--
 Zum Schluss: Was lässt sich aus diesem Hobby-Projekt mitnehmen – auch für Enterprise-Software?
@@ -44,6 +43,7 @@ Client-seitiger Zustand ist keine Notlösung.
 
 ---
 layout: end
+q-placements: MN
 ---
 
 <div class="text-200px font-bold">Q&A</div>

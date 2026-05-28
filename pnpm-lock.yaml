@@ -12,8 +12,8 @@ importers:
         specifier: ^1.2.3
         version: 1.2.3
       '@qaware-internal/slidev-theme-qaware':
-        specifier: ^1.6.0
-        version: 1.6.0(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))
+        specifier: github:qaware-internal/slidev-theme-qaware#community-theme
+        version: git+https://git@github.com:qaware-internal/slidev-theme-qaware.git#43d89e2273d3f9247a55d8b19db0e51716515ca9(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))
       '@slidev/cli':
         specifier: ^52.14.1
         version: 52.14.2(@nuxt/kit@3.21.2)(@types/markdown-it@14.1.2)(@types/node@22.19.15)(@vue/compiler-sfc@3.5.31)(markdown-it@14.1.1)(playwright-chromium@1.60.0)(postcss@8.5.8)
@@ -590,8 +590,9 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@qaware-internal/slidev-theme-qaware@1.6.0':
-    resolution: {integrity: sha512-j9wEBwbnofb/znBVxZ5xZBifKWXhqR6zz+iQvZnIzUkmAlOemug1LKC49RZpq9FWR++hD3/qom+IC7aQtq6sFQ==, tarball: https://npm.pkg.github.com/download/@qaware-internal/slidev-theme-qaware/1.6.0/d970f2687b257c838743dcda27da00304e541560}
+  '@qaware-internal/slidev-theme-qaware@git+https://git@github.com:qaware-internal/slidev-theme-qaware.git#43d89e2273d3f9247a55d8b19db0e51716515ca9':
+    resolution: {commit: 43d89e2273d3f9247a55d8b19db0e51716515ca9, repo: git@github.com:qaware-internal/slidev-theme-qaware.git, type: git}
+    version: 1.6.0
     engines: {node: '>=18.0.0'}
 
   '@quansync/fs@1.0.0':
@@ -2589,8 +2590,8 @@ packages:
     resolution: {integrity: sha512-WZzIx3rC1CvbMDloLsVw0lkZVKJWbrkJ0k1ghKFmcnPrW1+jWbgTkTEWVtD9lMdmI4jZEz40+naBxl1dCUhXXw==}
     engines: {node: '>=14.16'}
 
-  tailwind-merge@3.5.0:
-    resolution: {integrity: sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==}
+  tailwind-merge@3.6.0:
+    resolution: {integrity: sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w==}
 
   time-span@5.1.0:
     resolution: {integrity: sha512-75voc/9G4rDIJleOo4jPvN4/YC4GRZrY8yy1uU4lwrB3XEQbWve8zXoO5No4eFrGcTAMYyoY67p8jRQdtA1HbA==}
@@ -3481,12 +3482,12 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@qaware-internal/slidev-theme-qaware@1.6.0(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))':
+  '@qaware-internal/slidev-theme-qaware@git+https://git@github.com:qaware-internal/slidev-theme-qaware.git#43d89e2273d3f9247a55d8b19db0e51716515ca9(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))':
     dependencies:
       '@iconify-json/bxl': 1.2.4
       '@slidev/types': 52.14.2(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))
       qrcode: 1.5.4
-      tailwind-merge: 3.5.0
+      tailwind-merge: 3.6.0
     transitivePeerDependencies:
       - '@nuxt/kit'
       - '@pinia/colada'
@@ -6021,7 +6022,7 @@ snapshots:
       function-timeout: 0.1.1
       time-span: 5.1.0
 
-  tailwind-merge@3.5.0: {}
+  tailwind-merge@3.6.0: {}
 
   time-span@5.1.0:
     dependencies:

@@ -1,12 +1,12 @@
 ---
 theme: '@qaware-internal/slidev-theme-qaware'
-layout: ec26
 title: UI/UX Qualitätssicherung
 shortTitle: Titel
 duration: 90m
 section:
   duration: 1m
 endTime: '09:30'
+color: purple
 author: Charlie Harding · QAware GmbH
 authorUrl: qaware.de
 articleClass: mr-55%
@@ -31,73 +31,111 @@ Kommentar
 
 ---
 title: Wer bin ich?
-inner-split: 50
+inner-split: 70
 right:
   class: flex
+q-placements: KL
 ---
 
-**Charlie Harding**  
-Senior Software Engineer  
-bei QAware GmbH, München
+**Charlie Harding**
 
-Frontend-begeistert {v-click}
+<v-clicks depth="3">
+
+- **2016–2020** B.Eng. + M.Eng. Computer Science, University of Bristol
+  - **2018–2019** Erasmus-Student an der TU München
+
+- **seit 2020** QAware GmbH München (Senior Software Engineer)
+  - Schwerpunkt Frontend-Entwicklung
+
+</v-clicks>
 
 ::right::
 
 <img src="/media/cha.jpeg"  class="rounded-full w-70 mx-auto" />
 
 <!--
-Kurz zu mir: Ich bin Charlie, Senior Software Engineer im Projekt CaVORS.
+Kurz zu mir: Ich bin Charlie.
 
-[click] Ich baue gerne Frontends.
+Ich habe in Bristol Informatik studiert, [click] mit einem Jahr in München als Erasmus-Student.
 -->
 
+::footer::
+
+#gernPerDu
+
 ---
-title: Agenda
-disabled: true
+shortTitle: Agenda
+q-placements: JD
+hide-footer: true
+inner-split: 25
+left:
+  class: flex justify-center text-4xl font-bold leading-tight
+right:
+  class: flex justify-center
 ---
 
-```comment
-1. **Einstieg & Motivation** — von der Papierkarte zum digitalen Projekt
+Agenda
 
-2. **Transformation & Architektur** — API statt Datei-Export
+::right::
 
-3. **Karten & Visualisierung** — Mapbox, Layer und Heatmap-Farben
+**01** Motivation [— Warum ist Frontend-Qualität so wichtig?]
 
-4. **Datenmanagement** — Caching, Delta-Updates und Browser-Limits
+**02** TypeScript [— Typen als Sicherheitsnetz und Dokumentation]
 
-5. **Governance & Compliance** — wenn die Plattform die Regeln ändert
+**03** Linting & Formatting [— Automatisierte Standards und CI]
 
-6. **Takeaways** — Learnings für Hobby und Enterprise
+**04** Architektur [— Komponentenqualität und Struktur]
+
+**05** Accessibility [— Qualität aus Nutzerperspektive]
+
+**06** Design-Systeme [— Konsistenz und wiederverwendbare Patterns]
+
+**07** Learnings / Q&A
+
+<style>
+
+strong {
+  --uno: text-orange-light min-w-6 mr-2 inline-block;
+}
+
+span {
+  --uno: text-sm italic font-light text-gray-300;
+}
+
+</style>
 
 <!--
-Kurzer Überblick: Wir starten mit der Motivation, schauen uns dann Architektur und Visualisierung an,
-  gehen auf Datenmanagement ein und enden mit Governance und den wichtigsten Takeaways.
+Kurzer Überblick: Wir starten mit der Frage, warum Frontend-Qualität überhaupt ein Thema ist.
+Dann schauen wir uns TypeScript, Linting und Architektur als konkrete Werkzeuge an.
+Danach geht es um Accessibility und Design-Systeme — also Qualität aus Nutzersicht.
+Zum Schluss: Learnings und eure Fragen.
+Aber ihr könnt gerne jederzeit Fragen stellen — nicht erst am Ende.
 -->
-```
 
-```comment
 ---
-src: ./pages/01-einstieg.md
+src: ./pages/01-motivation.md
 ---
 
 ---
-src: ./pages/02-transformation.md
+src: ./pages/02-typescript.md
 ---
 
 ---
-src: ./pages/03-visualisierung.md
+src: ./pages/03-linting.md
 ---
 
 ---
-src: ./pages/04-datenmanagement.md
+src: ./pages/04-architektur.md
 ---
 
 ---
-src: ./pages/05-governance.md
+src: ./pages/05-accessibility.md
 ---
-```
 
 ---
-src: ./pages/06-abschluss.md
+src: ./pages/06-design-systeme.md
+---
+
+---
+src: ./pages/07-abschluss.md
 ---
