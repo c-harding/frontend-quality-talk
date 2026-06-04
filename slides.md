@@ -16,6 +16,7 @@ htmlAttrs:
   lang: de-DE
 addons:
   - 'slidev-addon-timing-bar'
+twoslash: true
 ---
 
 Frontends bauen, die halten
@@ -32,6 +33,8 @@ Kommentar
 ---
 title: Wer bin ich?
 inner-split: 70
+left:
+  class: text-lg
 right:
   class: flex
 q-placements: KL
