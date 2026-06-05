@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-const { redButtons, showRightDialog = true } = defineProps<{
+const {
+  redButtons,
+  showRightDialog = true,
+  destructiveRightAction,
+} = defineProps<{
   redButtons?: boolean;
   showRightDialog?: boolean;
+  destructiveRightAction?: boolean;
 }>();
 
 const btnA = computed(() => (redButtons ? 'bg-red-600' : 'bg-blue-600'));
-const btnB = computed(() => (redButtons ? 'bg-red-500' : 'bg-blue-500'));
+const btnB = computed(() =>
+  redButtons || destructiveRightAction ? 'bg-red-500' : 'bg-blue-500',
+);
 </script>
 
 <template>
@@ -67,7 +74,7 @@ const btnB = computed(() => (redButtons ? 'bg-red-500' : 'bg-blue-500'));
           class="px-3 py-1.5 rounded-full text-sm font-medium text-white transition-colors"
           :class="btnB"
         >
-          OK
+          löschen
         </button>
       </div>
     </div>
