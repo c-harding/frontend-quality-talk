@@ -45,7 +45,7 @@ Ich stelle eine Frage: Wer von euch nutzt Accessibility-Features? Hebt die Hand 
 
 [click] Und das ist der Punkt: Das ist Accessibility. Nicht ein Nischen-Feature für Menschen mit Behinderungen, sondern eure täglichen Situationen. Du hältst einen Kaffee in der Hand und scrollst mit der anderen. Du magst Dark Mode. Du siehst kleinen Text nicht gut und zoomst Websites.
 
-Accessibility ist universal. Deshalb bauen wir es von Anfang an ein.
+Accessibility ist universell. Deshalb bauen wir es von Anfang an ein.
 -->
 
 ---
@@ -98,7 +98,7 @@ Es gibt zwei Kategorien.
 
 [click] Und situativ: jeder von uns in bestimmten Momenten. Grelles Sonnenlicht, eine Hand voll Kaffee, Ton aus in der Bahn, schlechte Verbindung unterwegs.
 
-[click] Dieselbe Barriere, unterschiedliche Ursachen. Schlechter Farbkontrast versagt für jemanden mit Farbsehschwäche — und für jeden, der im Freien auf sein Handy schaut. Kein Captions? Schlecht für Gehörlose, und für jeden, der gerade nicht laut machen kann.
+[click] Dieselbe Barriere, unterschiedliche Ursachen. Schlechter Farbkontrast schließt jemanden mit Farbsehschwäche aus — und jeden, der im Freien auf sein Handy schaut. Keine Untertitel? Schlecht für Gehörlose, und für jeden, der gerade den Ton nicht aufdrehen kann.
 
 Das ist der eigentliche Grund, warum Accessibility kein Randthema ist: Wir bauen für uns selbst.
 -->
@@ -371,54 +371,110 @@ Die Reihenfolge muss auch passen. Manchmal kann es in CSS einfacher sein, die Re
 -->
 
 ---
+title: Testing & Tooling
+split: 50
+hide-footer: true
+article-class: flex flex-col gap-4
+---
 
+<div class="tooling-timeline"><v-clicks at="1">
+
+[1] In der IDE prüfen
+
+[2] Im Browser mit der Tastatur testen
+
+[3] Mit Screen Reader abhören
+
+[4] In CI mitlaufen lassen
+
+</v-clicks></div>
+
+::right::
+
+<div v-click class="tooling-card">
+  
+## Automatisiert
+  
+- axe
+- Lighthouse
+- ESLint-Plugins
+
+</div>
+<div v-click class="tooling-card">
+
+## Manuell
+
+- Tastatur-Navigation
+- Screen Reader
+- Farb-Kontrast-Checker
+
+</div>
+
+<style>
+.tooling-card {
+  --uno: rounded-xl border-2 p-5 flex flex-col gap-3 border-zinc-400 'dark:border-zinc-600' bg-zinc-50 'dark:bg-zinc-900/60';
+}
+
+.tooling-card h2 {
+  --uno: text-lg uppercase tracking-widest font-mono opacity-70 my-0;
+}
+
+.tooling-card ul {
+  --uno: text-base opacity-80 my-0 pl-5;
+}
+
+.tooling-timeline {
+  --uno: contents;
+}
+
+.tooling-timeline > p {
+  --uno: rounded-xl border-2 border-zinc-400 'dark:border-zinc-600' bg-zinc-50 'dark:bg-zinc-900/60' p-4 flex items-center gap-3 text-base my-0;
+  span {
+    --uno: inline-flex h-7 w-7 items-center justify-center rounded-full border border-zinc-400 'dark:border-zinc-600' font-mono text-sm;
+  }
+}
+
+</style>
 
 <!--
-Grober Plan (12 min):
+Nachdem wir die häufigsten Fehler gesehen haben, geht es darum, wie wir sie früh entdecken.
 
-Kapitelfolie: (~1 min)
+[click] Automatisierte Checks wie axe, Lighthouse und ESLint-Plugins sind schnell und gut für klare Regeln. Sie finden sofort, was offensichtlich kaputt ist.
 
-- Übergang: Eine Anwendung ist nur dann wirklich gut, wenn sie für alle funktioniert
+[click] Dann prüfen wir manuell: Tastatur, [click] Screen Reader und Kontrast zeigen, ob sich die Bedienung wirklich gut anfühlt.
 
-Slide 0: Audience Activation – „Wer nutzt Accessibility-Features?" (~1 min)
-- Screen Reader zum Navigieren im Web
-- Voice Control / Speech-to-Text
-- Zooming auf Websites
-- Untertitel bei Videos
-- Dark Mode
-- Mit einer Hand das Handy bedienen
-- Reveal: „Das ist Accessibility. Nicht Nischen-Feature – eure tägliche Realität."
+[click] Und schließlich gehört das in den normalen Workflow: in der IDE, im Browser und in CI.
 
-Slide 1: Was ist Accessibility? (~2 min)
+So wird Accessibility ein normaler Teil der Entwicklung und nicht nur ein letzter Haken am Ende.
+-->
 
-- Visualisierung: verschiedene Benutzer (Blinde, Motor-Einschränkungen, Gehörlose, kognitiv)
-- Nicht nur Behinderung: alt, müde, abgelenkt, schlechte Internetverbindung
-- Qualität für alle bedeutet auch Nutzbarkeit für alle
+---
+title: Accessibility im Alltag
+---
 
-Slide 2: Kernprinzipien – POUR (~2 min)
+<v-clicks>
 
-- Perceivable · Operable · Understandable · Robust
-- Semantisches HTML · Keyboard-Navigation · Farben/Kontrast · Labels
-- Accessibility ist in der HTML/API-Schicht verankert, nicht nur CSS
+- **Im Review:** Bedienbarkeit wird gezielt geprüft
+- **In gemeinsamen UI-Komponenten:** Barrierearme Bausteine skalieren über das ganze Produkt
+- **Im Test:** Automatisierte Checks plus manuelle Screen-Reader- und Keyboard-Tests
+- **Im Team:** Accessibility-Kriterien sind Teil der Fertig-Checkliste
 
-Slide 3: Häufige Probleme – und wie man sie behebt (~2.5 min)
+</v-clicks>
 
-- Konkrete Beispiele in Komponenten: fehlende Labels, schlechte Kontraste, keine Tab-Navigation
-- Live-Demo oder Visualisierung: Screen Reader Feedback
-- Quick Wins: aria-label, semantic HTML, color-contrast Check
-- Accessibility gehört in die Komponente von Anfang an
+<p v-click class="mt-8 italic opacity-70">
+  Accessibility ist kein Zusatz — sie ist Teil von Produktqualität.
+</p>
 
-Slide 4: Testing & Tooling (~2 min)
+<!--
+Zum Abschluss: Accessibility ist kein eigener Arbeitsschritt am Ende, sondern tägliche Praxis.
 
-- Automatisiert: axe, Lighthouse, ESLint-Plugins
-- Manuell: Keyboard-Navigation, Screen Reader, Farb-Kontrast-Checker
-- In CI/CD integrieren – nicht erst am Ende checken
-- Tools sind Helfer, kein Ersatz für manuelles Testing
+[click] Im Review prüfen wir nicht nur Logik und Stil, sondern auch Themen wie Labels, Fokuszustände und Tastatur-Reihenfolge.
 
-Slide 5: Accessibility im Alltag (~1.5 min)
+[click] In gemeinsamen UI-Komponenten zahlt sich das doppelt aus: Wenn Basisbausteine barrierearm gebaut sind, profitieren alle Features automatisch.
 
-- Im Review: Werden Labels geprüft? Ist die Reihenfolge richtig?
-- Im Design-System: Komponenten mit guter Accessibility skalieren Vorteile
-- Im Test: Accessibility-Tests neben Unit-Tests
-- Übergang: Qualität ist ein kontinuierlicher Prozess – durch alle Layer
+[click] Im Test kombinieren wir schnelle automatisierte Checks mit gezielten manuellen Tests, z. B. mit Tastatur und Screen Reader.
+
+[click] Und im Team gehört das in die Fertig-Checkliste: Was nicht zugänglich ist, ist noch nicht fertig. So wird Accessibility kein Zufall, sondern Standard.
+
+[click] Genau so wird aus Accessibility verlässliche Produktqualität.
 -->
