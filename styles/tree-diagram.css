@@ -1,0 +1,39 @@
+.tree-diagram,
+.tree-diagram ul {
+  --uno: flex flex-col font-mono text-base flex-1 m-0 p-0 'list-none!';
+}
+
+.tree-diagram-row {
+  --uno: flex items-center gap-1.5 h-10;
+}
+
+.tree-diagram li {
+  --uno: relative p-0 ml-9;
+}
+
+.tree-diagram > li {
+  --uno: 'ml-0!';
+}
+
+.tree-diagram li > .tree-diagram-row::before {
+  --uno: content-empty block w-5;
+}
+
+.tree-diagram ul li > .tree-diagram-row::before {
+  --uno: border-t border-dark 'dark:border-light';
+}
+
+.tree-diagram ul li::before {
+  --uno: content-empty absolute left-0 top-0 bottom-0 border-l border-dark 'dark:border-light';
+}
+
+.tree-diagram ul li:last-child::before {
+  --uno: h-5;
+}
+
+.tree-diagram-badge {
+  --uno: inline-flex w-5 h-5 shrink-0 items-center justify-center rounded border leading-none;
+}
+
+
+
