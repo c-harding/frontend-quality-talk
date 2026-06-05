@@ -10,6 +10,7 @@ Typen als Sicherheitsnetz und Dokumentation
 
 ---
 title: 'JavaScript-Quiz: Arrays'
+q-placements: KL
 ---
 
 JavaScript ist die Sprache des Webs — aber sie hat ihre Eigenheiten.
@@ -43,6 +44,7 @@ Die Sprache wurde initial so gebaut, damit Fehler möglichst selten auftauchen �
 
 ---
 title: 'JavaScript-Quiz: Booleans'
+q-placements: KL
 ---
 
 **Was gibt das aus?**
@@ -65,6 +67,7 @@ true + true + true?
 
 ---
 title: 'JavaScript-Quiz: Argumente'
+q-placements: KL
 ---
 
 **Was gibt das aus?**
@@ -115,6 +118,7 @@ add mit drei Argumenten, obwohl die Funktion nur zwei erwartet?
 
 ---
 title: 'JavaScript-Quiz: String-Arithmetik'
+q-placements: KL
 ---
 
 **Was gibt das aus?**
@@ -151,6 +155,7 @@ String plus Zahl?
 
 ---
 title: 'JavaScript-Quiz: Tippfehler'
+q-placements: KL
 ---
 
 **Was gibt das aus?**
@@ -293,7 +298,7 @@ title: Warum TypeScript?
 JavaScript + Typen = **TypeScript**
 
 <!-- prettier-ignore-start -->
-```ts {1-3,7,9} twoslash -- do not remove the curly braces: see https://github.com/slidevjs/slidev#2618
+```ts {1-3,7,9} twoslash -- do not remove the curly braces: see https://github.com/slidevjs/slidev/issues/2618
 interface Item { name: string; price: number }
 
 function calculatePrice(items: Item[], taxRate: number): number {
@@ -352,6 +357,157 @@ TypeScript macht den Code nicht nur sicherer, sondern auch lesbarer.
 [click] Das spart Zeit im Alltag: weniger Suche, weniger Missverständnisse.
 
 [click] Das ist der Kernvorteil: Fehler werden früh abgefangen. Nicht zur Laufzeit, sondern bereits beim Schreiben oder beim Build.
+-->
+
+---
+title: Bessere Komponenten-APIs
+---
+
+<v-click>
+
+```ts
+@Component({ ... })
+class PriceBadgeComponent {
+  readonly amount = input.required<number>();
+  readonly currency = input<'EUR' | 'USD'>('EUR');
+}
+```
+
+</v-click>
+
+<v-click>
+
+<!-- prettier-ignore-start -->
+````md magic-move
+```html
+<app-price-badge />
+ ^^^^^^^^^^^^^^^ Missing required input `amount`
+```
+
+```html
+<app-price-badge [amount]="'19'" />
+                           ^^^^
+     Type 'string' is not assignable to type 'number'
+```
+
+```html
+<app-price-badge [amount]="19" />
+```
+
+```html
+<app-price-badge [amount]="19" currency="GBP" />
+                                         ^^^
+               Type '"GBP"' is not assignable to type '"EUR" | "USD"'
+```
+````
+<!-- prettier-ignore-end -->
+
+</v-click>
+
+<style>
+* { --slidev-code-font-size: 1.25rem }
+</style>
+
+<!--
+TypeScript hilft nicht nur bei Funktionen, sondern auch bei Komponenten, bspw. in Reach, Vue oder Angular. Inputs sind die öffentliche Schnittstelle.
+
+[click] Hier haben wir eine Angular-Komponente mit zwei Inputs: `amount` ist eine required number, und `currency` ist ein optionaler String, der nur "EUR" oder "USD" sein darf.
+
+[click] Wenn ein Input als required markiert ist, muss er auch übergeben werden. Ansonsten gibt es einen Fehler.
+
+[click] Wenn der Typ nicht stimmt, gibt es ebenfalls einen Fehler. Hier wird eine Zahl erwartet, aber ein String übergeben.
+
+[click] Mit einer Zahl funktioniert es.
+
+[click] Und wenn wir einen ungültigen Wert für `currency` übergeben, gibt es auch einen Fehler. Das ist besonders hilfreich bei Enums oder Union Types.
+-->
+
+---
+title: Sichere Refactorings
+clicks: 4
+---
+
+<!-- prettier-ignore-start -->
+<ShowUsagesRefactorDemo
+  :selected-item="{ 1: 'show-usages', 3: 'rename' }[$clicks]"
+  :view="{ 1: 'menu', 2: 'show-usages', 3: 'menu', 4: 'rename' }[$clicks]"
+>
+<!-- prettier-ignore-start -->
+```ts
+interface User { firstName: string; lastName: string }
+```
+<!-- prettier-ignore-end -->
+</ShowUsagesRefactorDemo>
+<!-- prettier-ignore-end -->
+
+<!--
+Mit Typannotationen können wir leicht finden, welche Objekte ein bestimmtes Interface verwenden.
+
+[click] In IDEs geht das automatisch, zum Beispiel mit „Show Usages“.
+
+[click] Da sieht man alle Stellen, 
+
+[click] Das kann dann für Refactorings genutzt werden: Mit dem Rename-Tool der IDE aktualisieren wir alle Verwendungen, ohne Felder anderer Objekte zu verändern, die zufällig gleich heißen.
+-->
+
+---
+title: Sichere Refactorings
+---
+
+<!-- prettier-ignore-start -->
+```ts {} twoslash -- do not remove the curly braces: see https://github.com/slidevjs/slidev/issues/2618
+interface RawUser { vorname: string; nachname: string }
+
+// ---cut---
+interface User { givenName: string; lastName: string }
+
+function mapUser(user: RawUser): User {
+  return {
+    firstName: user.vorname,
+    lastName: user.nachname,
+  };
+}
+```
+<!-- prettier-ignore-end -->
+
+<style>
+.twoslash :deep(.twoslash-error-line) {
+  white-space: pre-line;
+  max-width: 100%;
+}
+</style>
+
+<!--
+Und wenn am Ende doch etwas übersehen wurde, warnt TypeScript über unbekannte Properties.
+-->
+
+---
+title: API-Verträge
+---
+
+<v-clicks>
+
+- Shared Types
+
+- Generiert aus API-Verträgen (z. B. OpenAPI- oder GraphQL-Schema)
+
+- Backend ändert Response → Frontend-Build bricht sofort
+
+- TypeScript macht Änderungen früh sichtbar —
+  bevor sie in Produktion gehen
+
+</v-clicks>
+
+<!--
+TypeScript ist nicht nur für lokalen Code nützlich — es kann auch API-Grenzen absichern.
+
+[click] Shared Types bedeutet: Backend und Frontend sprechen dieselbe Sprache.
+
+[click] Viele Teams generieren diese Typen automatisch aus API-Verträgen. OpenAPI und GraphQL-Schemas sind dabei maschinenlesbare Beschreibungen der Schnittstelle: Welche Endpunkte es gibt, welche Felder kommen und welche Typen sie haben. Diese lassen sich wiederum aus dem Backend-Code generieren.
+
+[click] Wenn das Backend eine Property umbenennt oder entfernt, schlägt der Frontend-Build sofort an — kein manuelles Suchen.
+
+[click] Damit schließen wir das TypeScript-Kapitel: Typen machen den Code sicherer und lesbarer und helfen, Änderungen früh sichtbar zu machen — lange bevor sie in Produktion gehen.
 -->
 
 ---

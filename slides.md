@@ -16,7 +16,6 @@ htmlAttrs:
   lang: de-DE
 addons:
   - 'slidev-addon-timing-bar'
-twoslash: true
 ---
 
 Frontends bauen, die halten

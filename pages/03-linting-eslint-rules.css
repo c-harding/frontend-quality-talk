@@ -1,0 +1,15 @@
+.eslint-rules-switch ol {
+  --uno: pl-6 text-xl;
+}
+
+.eslint-rules-switch ol > li {
+  --uno: my-2;
+}
+
+.eslint-rules-switch ol > li:last-child {
+  --uno: text-xl font-semibold;
+}
+
+.eslint-rules-switch ol > li:not(:last-child) {
+  --uno: text-base text-zinc-600 'dark:text-zinc-300';
+}
