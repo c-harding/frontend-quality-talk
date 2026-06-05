@@ -92,6 +92,8 @@ Ein Linter ist allgemein ein Werkzeug, das Quellcode automatisch auf bestimmte R
 
 Kurz gesagt: ESLint prüft Code auf typische Probleme und hilft beim Einhalten von Stilregeln.
 
+ESLint ist dabei im JavaScript- und TypeScript-Umfeld der am weitesten verbreitete Linter, aber nicht die einzige Option.
+
 Jetzt schauen wir uns an, wie das direkt im Code aussieht.
 -->
 

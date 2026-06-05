@@ -194,7 +194,7 @@ Accessibility basiert auf vier Prinzipien, zusammengefasst als POUR. Das ist der
 
 [click] Viertens: Robust. Es muss funktionieren, egal welchen Browser oder welche Assistive-Technology jemand nutzt. Valid HTML, damit alles richtig geparst wird. ARIA korrekt eingesetzt, nicht nur dekorativ. Responsive, damit es auf jedem Screen funktioniert.
 
-Alle vier Prinzipien greifen ineinander. Aktiviere einen, erleichterst du die Nutzung für viele.
+Alle vier Prinzipien greifen ineinander. Wer einen verbessert, erleichtert die Nutzung für viele.
 -->
 
 ---
@@ -350,7 +350,7 @@ Erstens: Input ohne sichtbares Label. [click] Ein Platzhalter reicht nicht, weil
 
 [click] Mit einem Label sieht es besser aus.
 
-Allerdings ist er nicht leicht zu lesen: Der Kontrast ist zu gering.
+Allerdings ist es nicht leicht zu lesen: Der Kontrast ist zu gering.
 
 [click] Und seht: Das Label ist jetzt deutlich sichtbar – viel besser lesbar.
 
@@ -363,9 +363,9 @@ Diese interaktiven Elemente brauchen außerdem echte Semantik: also Button oder 
 [click] Und wenn ein Button nur ein Icon hat, wird er bei einer schlechten Internetverbindung oder beim Request-Fehler unbrauchbar.
 [click] Wir brauchen einen zugänglichen Namen, bspw. per `aria-label` oder `alt`.
 
-[click] Die Tastatur-Fokus muss sichtbar sein. Mit nativen Buttons kriegt man das automatisch, aber man muss aufpassen, es nicht wieder zu überschreiben.
+[click] Der Tastatur-Fokus muss sichtbar sein. Mit nativen Buttons kriegt man das automatisch, aber man muss aufpassen, es nicht wieder zu überschreiben.
 
-Die Reihenfolge muss auch passen. Manchmal kann es in CSS einfacher sein, die Reihenfolge umzukehren, um Buttons zu positionieren, aber das verschlechtet die Bedienbarkeit für Tastatur- und Screen-Reader-Nutzer.
+Die Reihenfolge muss auch passen. Manchmal kann es in CSS einfacher sein, die Reihenfolge umzukehren, um Buttons zu positionieren, aber das verschlechtert die Bedienbarkeit für Tastatur- und Screen-Reader-Nutzer.
 
 [click] Diese Reihenfolge sieht jetzt besser aus.
 -->

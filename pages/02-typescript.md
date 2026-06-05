@@ -409,7 +409,7 @@ class PriceBadgeComponent {
 </style>
 
 <!--
-TypeScript hilft nicht nur bei Funktionen, sondern auch bei Komponenten, bspw. in Reach, Vue oder Angular. Inputs sind die öffentliche Schnittstelle.
+TypeScript hilft nicht nur bei Funktionen, sondern auch bei Komponenten, bspw. in React, Vue oder Angular. Inputs bilden die öffentliche Schnittstelle.
 
 [click] Hier haben wir eine Angular-Komponente mit zwei Inputs: `amount` ist eine required number, und `currency` ist ein optionaler String, der nur "EUR" oder "USD" sein darf.
 
@@ -445,7 +445,7 @@ Mit Typannotationen können wir leicht finden, welche Objekte ein bestimmtes Int
 
 [click] In IDEs geht das automatisch, zum Beispiel mit „Show Usages“.
 
-[click] Da sieht man alle Stellen, 
+[click] Da sieht man alle Stellen, an denen das Interface verwendet wird.
 
 [click] Das kann dann für Refactorings genutzt werden: Mit dem Rename-Tool der IDE aktualisieren wir alle Verwendungen, ohne Felder anderer Objekte zu verändern, die zufällig gleich heißen.
 -->
@@ -478,7 +478,7 @@ function mapUser(user: RawUser): User {
 </style>
 
 <!--
-Und wenn am Ende doch etwas übersehen wurde, warnt TypeScript über unbekannte Properties.
+Und wenn am Ende doch etwas übersehen wurde, warnt TypeScript vor unbekannten Properties.
 -->
 
 ---

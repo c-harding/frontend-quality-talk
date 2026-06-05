@@ -49,7 +49,7 @@ title: Häufige Probleme
 [click] CSS wird mit !important überschrieben, weil niemand mehr durchblickt.
 
 [click] Und wenn jemand etwas umbenennt, fällt es erst in der Demo auf.
-Einer dieser Buttons funktioniert nicht, weil der Event umbenannt wurde.
+Einer dieser Buttons funktioniert nicht, weil das Event umbenannt wurde.
 -->
 
 ---
@@ -90,7 +90,7 @@ Das sind die Symptome. Aber wie eskaliert das eigentlich über die Zeit?
 Qualität? Kommt später. Erstmal soll es funktionieren.
 
 [click] Woche 4: Jemand merkt, dass sein Feature bei einem Teamkollegen anders aussieht.
-Der Spacing ist anders, die Farben stimmen nicht überein.
+Die Abstände sind anders, die Farben stimmen nicht überein.
 Man fängt an, Dinge mit !important zu überschreiben. Es funktioniert — irgendwie.
 
 [click] Woche 8: Jetzt traut sich keiner mehr, etwas anzufassen.
@@ -138,7 +138,7 @@ Frontend-Qualität ist mehr als nur hübsch aussehen. Es gibt vier Dimensionen:
 [click] Konsistenz — sieht es überall gleich aus? Oder hat jede Seite eigene Styles?
 
 [click] Und nicht nur optisch: funktioniert es auch überall gleich? Gleiche Interaktionen, gleiches Verhalten.
-Wenn ein Button eine Bestätigungsdialog zeigt — tun das alle ähnlichen Buttons auch?
+Wenn ein Button einen Bestätigungsdialog zeigt — tun das alle ähnlichen Buttons auch?
 
 [click] Wartbarkeit — kann ein Teamkollege euren Code verstehen und ändern, ohne etwas kaputt zu machen?
 

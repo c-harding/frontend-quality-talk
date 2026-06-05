@@ -9,7 +9,6 @@ endTime: '09:30'
 color: purple
 author: Charlie Harding · QAware GmbH
 authorUrl: qaware.de
-articleClass: mr-55%
 comark: true
 colorScheme: dark
 htmlAttrs:
