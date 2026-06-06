@@ -46,7 +46,7 @@ Jetzt schauen wir mit einer anderen Frage darauf: Warum passiert das überhaupt?
 
 [click] Und damit wird jede kleine Anforderung sofort zur Sonderlösung. Noch ein anderer Dialog. Noch ein anderer Button. Noch eine Ausnahme.
 
-[click] Das Problem ist also nicht nur optische Inkonsistenz. Änderungen müssen dann an vielen Stellen separat nachgezogen werden — und das wird oft einfach vergessen, oder nicht einheitlich gemacht.
+[click] Das Problem ist also nicht nur optische Inkonsistenz. Änderungen müssen dann an vielen Stellen separat nachgezogen werden — und das wird oft einfach vergessen oder nicht einheitlich gemacht.
 
 Genau an diesem Punkt werden Design-Systeme interessant: Sie schaffen gemeinsame Bausteine und gemeinsame Regeln.
 -->
@@ -195,7 +195,7 @@ article-class: flex flex-col gap-4 -mt-8
 hide-footer: true
 ---
 
-<v-switch class="mt-auto" at="1">
+<v-switch at="1">
 <template #0>
 <InconsistentDialogs destructive-right-action />
 </template>
@@ -322,7 +322,7 @@ Diesmal ist die Aufgabe aber eine andere: Nicht einfach nur Unterschiede finden,
 
 [click] Auf der rechten Seite wird etwas gelöscht, also kennzeichen wir die destruktive Aktion auch visuell, z. B. mit roter Farbe. Diese Werte entsprechen den Tokens, die das Design-System bereitstellt.
 
-[click] Und schließlich ist das Label der Primary Action unterschiedlich: OK vs. Löschen. Der Unterscheid beim Abbrechen-Label müssen wir nicht berücksichtigen: Vorher war es eher verwirrend, dass der linke Dialog den englischen Text „Cancel“ hatte.
+[click] Und schließlich ist das Label der Primary Action unterschiedlich: OK vs. Löschen. Der Unterschied beim Abbrechen-Label müssen wir nicht berücksichtigen: Vorher war es eher verwirrend, dass der linke Dialog den englischen Text „Cancel" hatte.
 
 Genau diese Inputs brauchen wir erstmal, um eine Komponente in unserem Design-System zu bauen. Aber danach können wir sie überall wiederverwenden — mit denselben Regeln, derselben Accessibility, und derselben Konsistenz.
 
@@ -334,12 +334,17 @@ title: Zusammenarbeit Design ↔ Entwicklung ↔ QA
 article-class: flex flex-col gap-6 justify-center
 ---
 
-<div class="grid grid-cols-3 gap-4 role-grid">
-  <div v-click class="role-card border-blue-dark dark:border-blue-light bg-blue-light/20 dark:bg-blue-dark/25">
+<script setup>
+import '../styles/column-layout.css';
+</script>
+
+<div class="grid-cols-3 column-layout-grid">
+
+<div v-click class="column-layout-card border-blue-dark dark:border-blue-light bg-blue-light/20 dark:bg-blue-dark/25">
 
 ## Design
 
-<mdi-palette-outline class="role-icon" />
+<mdi-palette-outline class="column-layout-icon" />
 
 - Wählt passende Komponenten aus
 - Nutzt Tokens statt Pixeln
@@ -347,11 +352,11 @@ article-class: flex flex-col gap-6 justify-center
 
 </div>
 
-<div v-click class="role-card border-orange-dark dark:border-orange-light bg-orange-light/20 dark:bg-orange-dark/25">
+<div v-click class="column-layout-card border-orange-dark dark:border-orange-light bg-orange-light/20 dark:bg-orange-dark/10">
       
 ## Entwicklung
 
-<mdi-code-tags class="role-icon" />
+<mdi-code-tags class="column-layout-icon" />
  
 - Baut das konkrete Feature aus vorhandenen Bausteinen
 - Accessibility by default
@@ -359,11 +364,11 @@ article-class: flex flex-col gap-6 justify-center
 
 </div>
 
-<div v-click class="role-card border-green-dark dark:border-green-light bg-green-light/20 dark:bg-green-dark/25">
+<div v-click class="column-layout-card border-green-dark dark:border-green-light bg-green-light/20 dark:bg-green-dark/25">
 
 ## QA
 
-<mdi-clipboard-check class="role-icon" />
+<mdi-clipboard-check class="column-layout-icon" />
 
 - Prüft das Feature gegen die vereinbarten Regeln
 - Testet Verhalten, Varianten und States
@@ -383,27 +388,6 @@ Tokens + Komponenten-Doku
 </div>
 
 <style>
-.role-grid {
-  --uno: items-stretch;
-}
-
-.role-card {
-  --uno: rounded-xl border-2 px-4 pb-4 pt-6 shadow-sm relative;
-}
-
-.role-card .role-icon {
-  --uno: absolute left-0 right-0 mx-auto -top-6.5 p-1 w-12 h-12 rounded-full flex items-center justify-center bg-white/70 'dark:bg-zinc-900/70';
-
-}
-
-
-.role-card h2 {
-  --uno: m-0 mb-2 text-lg uppercase tracking-widest font-mono;
-}
-
-.role-card ul {
-  --uno: m-0 pl-4 text-sm leading-relaxed;
-}
 </style>
 
 <!--

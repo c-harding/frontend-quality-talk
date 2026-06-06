@@ -1,0 +1,24 @@
+.column-layout-grid {
+  --uno: grid gap-4 items-stretch;
+}
+
+.column-layout-card {
+  --uno: rounded-xl border-2 px-4 pb-4 pt-6 shadow-sm relative;
+}
+
+.column-layout-card h2 {
+  --uno: m-0 mb-2 text-lg uppercase tracking-widest font-mono;
+}
+
+.column-layout-card p {
+  --uno: text-base opacity-75;
+}
+
+.column-layout-card ul {
+  --uno: m-0 pl-4 text-sm leading-relaxed;
+}
+
+.column-layout-icon {
+  --uno: absolute left-0 right-0 mx-auto -top-6.5 p-1 w-12 h-12 rounded-full flex items-center justify-center bg-white/70 'dark:bg-zinc-900/70';
+}
+
