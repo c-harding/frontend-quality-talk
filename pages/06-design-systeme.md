@@ -330,46 +330,178 @@ Genau diese Inputs brauchen wir erstmal, um eine Komponente in unserem Design-Sy
 -->
 
 ---
+title: Zusammenarbeit Design ↔ Entwicklung ↔ QA
+article-class: flex flex-col gap-6 justify-center
+---
 
+<div class="grid grid-cols-3 gap-4 role-grid">
+  <div v-click class="role-card border-blue-dark dark:border-blue-light bg-blue-light/20 dark:bg-blue-dark/25">
+
+## Design
+
+<mdi-palette-outline class="role-icon" />
+
+- Wählt passende Komponenten aus
+- Nutzt Tokens statt Pixeln
+- Beachtet die Regeln und Guidelines
+
+</div>
+
+<div v-click class="role-card border-orange-dark dark:border-orange-light bg-orange-light/20 dark:bg-orange-dark/25">
+      
+## Entwicklung
+
+<mdi-code-tags class="role-icon" />
+ 
+- Baut das konkrete Feature aus vorhandenen Bausteinen
+- Accessibility by default
+- Nutzt die Komponenten-APIs
+
+</div>
+
+<div v-click class="role-card border-green-dark dark:border-green-light bg-green-light/20 dark:bg-green-dark/25">
+
+## QA
+
+<mdi-clipboard-check class="role-icon" />
+
+- Prüft das Feature gegen die vereinbarten Regeln
+- Testet Verhalten, Varianten und States
+- Die Bausteine sind stabiler als einzelne Seiten
+
+</div>
+</div>
+
+<div v-click class="rounded-xl border border-zinc-400 dark:border-zinc-600 bg-zinc-100 dark:bg-zinc-900 px-5 py-3 text-center text-lg">
+
+::p{.m-0.text-base.uppercase.tracking-widest.opacity-70}
+Single Source of Truth
+::
+
+Tokens + Komponenten-Doku
+
+</div>
+
+<style>
+.role-grid {
+  --uno: items-stretch;
+}
+
+.role-card {
+  --uno: rounded-xl border-2 px-4 pb-4 pt-6 shadow-sm relative;
+}
+
+.role-card .role-icon {
+  --uno: absolute left-0 right-0 mx-auto -top-6.5 p-1 w-12 h-12 rounded-full flex items-center justify-center bg-white/70 'dark:bg-zinc-900/70';
+
+}
+
+
+.role-card h2 {
+  --uno: m-0 mb-2 text-lg uppercase tracking-widest font-mono;
+}
+
+.role-card ul {
+  --uno: m-0 pl-4 text-sm leading-relaxed;
+}
+</style>
 
 <!--
-Grober Plan (12 min):
+Sobald die Bausteine des Design-Systems stehen, wird die Zusammenarbeit zwischen Design, Entwicklung und QA viel einfacher.
 
-Kapitelfolie: (~1 min)
-- Übergang: Accessibility skaliert nur, wenn gute Lösungen wiederverwendbar sind
-- Von Einzel-Fixes zu systematischer UI-Qualität
+[click] Design wählt passende Bausteine aus, definiert das gewünschte UI-Pattern und liefert Entwurfe anhand von Tokens und Komponenten statt Pixelwerte.
 
-Slide 1: Warum Design-Systeme? (~2 min)
-- Probleme ohne System: Inkonsistenz, Doppelarbeit, UI-Drift
-- Mit System: einheitliches Verhalten, schnellere Umsetzung, weniger Diskussionen
-- Design-Systeme sind Qualitäts- und Produktivitätswerkzeug
+[click] Entwicklung baut daraus das konkrete Feature zusammen. Weil Design schon kennt, welche Konfig-Optionen die Komponenten anbieten, sind die Entwürfe viel einfacher umzusetzen. Und Accessibility ist direkt eingebaut, weil die Bausteine das schon berücksichtigen.
 
-Slide 2: Was gehört in ein Design-System? (~2 min)
-- Design Tokens: Farben, Spacing, Typografie, Radius, States
-- Komponenten: Button, Input, Modal inkl. Varianten und States
-- Regeln & Guidelines: Wann nutze ich was? Was ist „richtig“?
-- Dokumentation + Beispiele als gemeinsame Referenz
+[click] QA testet das fertige Feature: Stimmen Verhalten, Varianten und States im Zusammenspiel der Bausteine?
 
-Slide 3: Design Tokens bauen aufeinander auf (~2 min)
-- Primitive -> Semantische -> Komponenten-Tokens
-- Bedeutung statt Rohwerten schafft konsistente Entscheidungen
-- Änderungen vererben sich kontrolliert durch das System
+[click] Damit das funktioniert, brauchen alle dieselbe Quelle: Tokens, Komponentendoku und Design-System-Guidelines.
 
-Slide 4: In der Praxis - von Wildwuchs zu Bausteinen (~2.5 min)
-- Vorher/Nachher: mehrfacher eigener Button-Code vs. zentrale Komponente
-- Einheitliche API für Komponenten (Props/Variants statt Custom-CSS)
-- Accessibility by default (Fokus, Kontrast, Labels) direkt eingebaut
-- Weniger Bugs bei Änderungen, weil Anpassungen zentral passieren
+Das führt zu besseren Übergaben, weniger Missverständnisse und schnelleren Releases.
+-->
 
-Slide 5: Zusammenarbeit Design <-> Entwicklung <-> QA (~2.5 min)
-- Gemeinsame Sprache: Tokens und Komponenten statt Pixel-Diskussionen
-- Figma, Code und Doku müssen dieselbe Quelle widerspiegeln
-- QA testet erwartbares Verhalten statt Sonderfälle je Screen
-- Gute Übergaben reduzieren Reibung und Nacharbeit
+---
+title: Bestehende Systeme zuerst?
+article-class: flex flex-col gap-6
+---
 
-Slide 6: Einführung im Alltag (~2 min)
+<div class="grid grid-cols-2 gap-4">
+
+<div v-click class="rounded-xl border-2 border-green-dark dark:border-green-light bg-green-light/20 dark:bg-green-dark/25 p-4">
+
+## Material Design
+
+- Von Google
+- Eine UI, die sehr Android-nah wirkt
+- Angular, aber auch Ports für React, Vue, etc.
+- https://material.angular.dev/
+
+</div>
+
+<div v-click class="rounded-xl border-2 border-petrol-dark dark:border-petrol-light bg-petrol-light/20 dark:bg-petrol-dark/25 p-4">
+
+## Primer
+
+- Von GitHub
+- Fokus auf Konsistenz und Accessibility
+- Nur React, aber auch CSS-Only-Variante
+- https://primer.style/
+
+</div>
+
+</div>
+
+<v-clicks>
+
+- Startet mit einem bestehenden System, wenn es gut zum Produkt passt
+- Baut eigene Bausteine nur dort, wo ihr euch bewusst unterscheiden wollt
+
+</v-clicks>
+
+<!--
+Bevor man selbst ein Design-System baut, lohnt sich oft ein Blick auf bestehende Systeme.
+
+Es gibt natürlich recht viele, hier sind nur ein paar Beispiele:
+
+[click] Material Design kommt von Google und ist sehr vollständig, wirkt aber je nach Produkt schnell sehr Android-nah. Es gibt eine offizielle Angular-Implementierung, aber auch Ports für React, Vue und andere Frameworks.
+
+[click] Primer ist Githubs eigenes System, entwickelt mit Fokus auf Konsistenz und Accessibility. Es ist vor allem React-fokussiert, aber es gibt auch eine CSS-Only-Variante, falls ihr etwas anderes nutzen möchtet.
+
+Wenn man etwas schnell bauen will, ist es oft sinnvoll, mit einem bestehenden System zu starten. Das spart Zeit und liefert direkt viele Bausteine.
+
+[click] Wichtig ist die Strategie: Übernehmen, was passt.
+
+[click] Und nur dort eigene Bausteine bauen, wo man sich wirklich unterscheiden möchte.
+-->
+
+---
+title: Einführung im Alltag
+article-class: flex flex-col gap-6
+---
+
+<v-clicks>
+
 - Klein starten: 3-5 Kernkomponenten mit klaren Standards
-- Contribution-Regeln: Wer darf ändern, wie wird reviewed?
-- Migration schrittweise: neue Features zuerst, Altbestand sukzessive
-- Übergang: Design-Systeme machen Qualität skalierbar
+- Gemeinsame Arbeitsweise festlegen: Wer pflegt was?
+- Schrittweise Migration: neue Features zuerst
+- Altbestand nur anfassen, wenn ihr dort sowieso arbeitet
+
+</v-clicks>
+
+::p{v-click .text-center}
+Qualität wird skalierbar, wenn gute Bausteine zur Standardlösung werden.
+::
+
+<!--
+Zum Abschluss geht es darum, wie man das im Alltag einführt.
+
+[click] Nicht mit 30 Komponenten starten, sondern mit wenigen Kernbausteinen.
+
+[click] Dann klären, wer die Bausteine pflegt und wie Änderungen abgestimmt werden.
+
+[click] Bei der Migration pragmatisch sein: neue Features zuerst.
+
+[click] Alten Code nur anfassen, wenn ihr dort ohnehin arbeitet.
+
+[click] So wird Qualität Schritt für Schritt skalierbar, statt ein Big-Bang-Projekt zu werden.
 -->
