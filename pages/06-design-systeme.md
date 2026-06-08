@@ -3,7 +3,8 @@ layout: chapter-split
 title: Design-Systeme
 chapter-number: '06'
 section:
-  duration: 15m
+  duration: 12m
+  buffer: 3m
 ---
 
 Konsistenz und wiederverwendbare Patterns
@@ -224,11 +225,13 @@ hide-footer: true
       <th>Rechts</th>
     </tr>
   </thead>
-  <tr>
-    <th>Titeltext</th>
-    <td><q>Änderungen speichern</q></td>
-    <td><q>Datei löschen</q></td>
-  </tr>
+  <tbody>
+    <tr>
+      <th>Titeltext</th>
+      <td><q>Änderungen speichern</q></td>
+      <td><q>Datei löschen</q></td>
+    </tr>
+  </tbody>
   <v-clicks>
     <tr>
       <th>Body-Text</th>

@@ -3,7 +3,8 @@ layout: chapter-split
 title: TypeScript
 chapter-number: '02'
 section:
-  duration: 20m
+  duration: 15m
+  buffer: 5m
 ---
 
 Typen als Sicherheitsnetz und Dokumentation

@@ -3,7 +3,8 @@ layout: chapter-split
 title: Accessibility
 chapter-number: '05'
 section:
-  duration: 15m
+  duration: 12m
+  buffer: 3m
 ---
 
 Qualität aus Nutzerperspektive
@@ -534,4 +535,8 @@ Zum Abschluss: Accessibility ist kein eigener Arbeitsschritt am Ende, sondern t�
 [click] Und im Team gehört das in die Fertig-Checkliste: Was nicht zugänglich ist, ist noch nicht fertig. So wird Accessibility kein Zufall, sondern Standard.
 
 [click] Genau so wird aus Accessibility verlässliche Produktqualität.
+
+Und genau da liegt der nächste Schritt:
+Wenn wir diese Qualitätsentscheidungen nicht in jedem Feature neu treffen wollen,
+brauchen wir gemeinsame Bausteine und Regeln, die sie standardmäßig mitbringen.
 -->

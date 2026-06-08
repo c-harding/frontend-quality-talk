@@ -1,0 +1,33 @@
+@media print {
+    #app nav:has(+main) {
+        display: none;
+    }
+
+    main>*>:nth-child(2)>:nth-child(2) {
+        display: none;
+    }
+
+    main>* {
+        break-inside: avoid;
+    }
+
+    html, body, #app, #app > div:has(>main), #app main {
+        overflow: unset;
+        max-width: 100vw;
+    }
+
+    #app .slidev-slide-content {
+        transform: scale(var(--slidev-slide-scale));
+        transform-origin: top left;
+        left: unset;
+        top: unset;
+    }
+
+    #app main + .top-0.right-0 {
+        display: none;
+    }
+
+    #app main > * > .bottom-0.right-0 {
+        display: none;
+    }
+}

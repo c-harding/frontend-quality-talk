@@ -12,7 +12,8 @@ title: Aufgabe
 
 <v-clicks>
 
-- Arbeitet alleine oder in 2er-Teams am Starter-Repo
+- Startet mit einer kurzen Erkundung: App ausprobieren, Codebasis durchklicken, Probleme notieren
+- Arbeitet in 2er-Teams am Starter-Repo
 - Ziel: Das Frontend Schritt für Schritt verbessern
 - Nutzt dafür TypeScript, Linting, Accessibility und konsistente Komponenten
 
@@ -24,6 +25,9 @@ Nicht alles perfekt machen - lieber die wichtigsten Probleme sauber lösen.
 
 <!--
 Jetzt geht es in die Praxis.
+
+Wichtig als erster Schritt: Schaut euch die App und den Code erst einmal bewusst an,
+probiert typische Flows aus und notiert euch gefundene Probleme.
 
 Ihr arbeitet alleine oder in 2er-Teams am Starter-Repo und verbessert es Schritt für Schritt.
 
@@ -65,6 +69,7 @@ Checkliste
 
 ::right::
 
+- Erst analysieren: Probleme sammeln und priorisieren
 - TypeScript: Typen schärfen statt `any`
 - Linting aktivieren und Fehler beheben
 - Accessibility: Labels, Fokus, Tastaturbedienung, Kontrast

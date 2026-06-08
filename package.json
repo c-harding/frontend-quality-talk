@@ -6,6 +6,7 @@
     "build": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export",
+    "export:overview": "node setup/print-overview-pdf.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

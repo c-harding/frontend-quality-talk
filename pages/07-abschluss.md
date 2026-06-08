@@ -3,7 +3,8 @@ layout: chapter-split
 title: Learnings / Q&A
 chapter-number: '07'
 section:
-  duration: 1m
+  duration: 2m
+  buffer: 2m
 ---
 
 <!--

@@ -10,7 +10,6 @@ color: purple
 author: Charlie Harding · QAware GmbH
 authorUrl: qaware.de
 comark: true
-colorScheme: dark
 htmlAttrs:
   lang: de-DE
 addons:
@@ -23,10 +22,6 @@ Frontends bauen, die halten
 
 Charlie Harding
 <SmartLink to="charlie.harding@qaware.de"/>
-
-<!--
-Kommentar
--->
 
 ---
 title: Wer bin ich?
@@ -61,9 +56,9 @@ q-placements: KL
 <!--
 Kurz zu mir: Ich bin Charlie.
 
-Ich habe in Bristol, England, Informatik studiert, [click] mit einem Jahr in München als Erasmus-Student.
+[click] Ich habe in Bristol, England, Informatik studiert, [click] mit einem Jahr in München als Erasmus-Student.
 
-[click] Seit 2020 arbeite ich bei der QAware in München als Senior Software Engineer mit Fokus auf Frontend-Entwicklung.
+[click] Seit 2020 arbeite ich bei der QAware in München als Senior Software Engineer [click] mit Fokus auf Frontend-Entwicklung.
 
 Warum erzähle ich das? Weil ich viele der typischen Frontend-Probleme selbst in Projekten gesehen habe: inkonsistente UI, schwer wartbarer Code, und Accessibility, die zu spät mitgedacht wird.
 -->
@@ -102,11 +97,11 @@ Agenda
 <style>
 
 strong {
-  --uno: text-orange-light min-w-6 mr-2 inline-block;
+  --uno: text-orange-dark 'dark:text-orange-light' min-w-6 mr-2 inline-block;
 }
 
 span {
-  --uno: text-sm italic font-light text-gray-300;
+  --uno: text-sm italic font-light opacity-70;
 }
 
 </style>

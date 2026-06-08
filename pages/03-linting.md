@@ -3,7 +3,8 @@ layout: chapter-split
 title: Linting & Formatting
 chapter-number: '03'
 section:
-  duration: 10m
+  duration: 8m
+  buffer: 2m
 ---
 
 Automatisierte Standards und CI

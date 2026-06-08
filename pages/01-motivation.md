@@ -8,6 +8,12 @@ section:
 
 Warum ist Frontend-Qualität so wichtig?
 
+<!--
+Dann würde ich schon anfangen, und zwar mit meiner Motivation:
+
+Warum beschäftigen wir uns überhaupt damit, wie gut das Frontend gebaut ist?
+-->
+
 ---
 title: Kennt ihr das?
 clicks: 3
