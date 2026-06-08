@@ -15,10 +15,10 @@ importers:
         specifier: communitytheme
         version: 2.0.0-beta.1(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))
       '@slidev/cli':
-        specifier: ^52.14.1
+        specifier: ~52.14.1
         version: 52.14.2(@nuxt/kit@3.21.2)(@types/markdown-it@14.1.2)(@types/node@22.19.15)(@vue/compiler-sfc@3.5.31)(markdown-it@14.1.1)(playwright-chromium@1.60.0)(postcss@8.5.8)
       '@slidev/client':
-        specifier: ^52.14.2
+        specifier: ~52.14.2
         version: 52.14.2(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))
       qrcode:
         specifier: ^1.5.4
