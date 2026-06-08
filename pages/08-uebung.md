@@ -12,7 +12,7 @@ title: Aufgabe
 
 <v-clicks>
 
-- Arbeitet in 2er-Teams am Starter-Repo
+- Arbeitet alleine oder in 2er-Teams am Starter-Repo
 - Ziel: Das Frontend Schritt für Schritt verbessern
 - Nutzt dafür TypeScript, Linting, Accessibility und konsistente Komponenten
 
@@ -25,7 +25,7 @@ Nicht alles perfekt machen - lieber die wichtigsten Probleme sauber lösen.
 <!--
 Jetzt geht es in die Praxis.
 
-Ihr arbeitet in 2er-Teams am Starter-Repo und verbessert es Schritt für Schritt.
+Ihr arbeitet alleine oder in 2er-Teams am Starter-Repo und verbessert es Schritt für Schritt.
 
 Wichtig: Nicht alles perfekt machen wollen. Priorisiert zuerst kritische Probleme,
 dann wichtige, dann Nice-to-have.
