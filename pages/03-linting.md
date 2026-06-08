@@ -248,7 +248,7 @@ function printValue(
 <template #2>
 
 1. Kein explizites `any` — `@typescript-eslint/no-explicit-any`
-2. Keine schwebenden Promises — `@typescript-eslint/no-floating-promises`
+2. Keine floating Promises — `@typescript-eslint/no-floating-promises`
 
 <RuleBadGoodTable>
   <template #bad>
@@ -257,7 +257,7 @@ function printValue(
 ```ts
 async function saveUser(
   user: User,
-): Promise<void> { ... }
+) { ... }
 
 saveUser(user);
 ```
@@ -270,7 +270,7 @@ saveUser(user);
 ```ts {5}
 async function saveUser(
   user: User,
-): Promise<void> { ... }
+) { ... }
 
 await saveUser(user);
 ```
@@ -283,7 +283,7 @@ await saveUser(user);
 <template #3>
 
 1. Kein explizites `any` — `@typescript-eslint/no-explicit-any`
-2. Keine schwebenden Promises — `@typescript-eslint/no-floating-promises`
+2. Keine floating Promises — `@typescript-eslint/no-floating-promises`
 3. Sichere Template-Strings — `@typescript-eslint/restrict-template-expressions`
 
 <RuleBadGoodTable>
@@ -301,9 +301,10 @@ const label =
   <template #good>
 
 <!-- prettier-ignore-start -->
-```ts {2}
+```ts
 const label =
   `User: ${user.name}`;
+// => "User: Charlie" 
 ```
 <!-- prettier-ignore-end -->
 
@@ -335,14 +336,14 @@ title: Prettier
 ```ts
 function buildLabel(user
       ){if(user.isActive){
-  return user. firstName+' ' +user.lastName}
-return "inaktiv"}
+return user. firstName+' ' +user.lastName}
+  return "inaktiv"}
 ```
 <!-- prettier-ignore-end -->
 
   </template>
 
-<template #2-5>
+<template #2-6>
 
 ```ts
 function buildLabel(user) {
@@ -393,7 +394,7 @@ const states = computed(() => ({ 'Lint': $clicks.value < 5 ? 'warn' : 'pass' }))
 
 <div class="mb-2 flex items-center gap-2">
   <mdi-source-pull />
-  <span><strong>c-harding</strong> hat einen neuen PR erstellt: <strong>Add user profile page</strong></span>
+  <span><strong>c-harding</strong> hat einen neuen Pull Request erstellt: <strong>Add user profile page</strong></span>
 </div>
 
 <div class="mb-2 flex items-center gap-2">

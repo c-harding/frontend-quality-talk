@@ -34,7 +34,7 @@ const usages: Usage[] = [
   {
     file: 'user-mapper.ts',
     line: 14,
-    code: 'firstName: resp.vorname,',
+    code: 'firstName: raw.vorname,',
     action: 'write',
   },
   {
@@ -46,7 +46,7 @@ const usages: Usage[] = [
   {
     file: 'user-info.template.html',
     line: 8,
-    code: '<h1>{user.firstName}</h1>',
+    code: '<h1>{me.firstName}</h1>',
     action: 'read',
   },
 ];

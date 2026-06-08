@@ -266,7 +266,7 @@ clicks: 8
     <button>
       <img src="search.svg" />
     </button>
-    <div>Speichern</div>
+    <div>Zurücksetzen</div>
   </div>
 </form>
 ```
@@ -281,7 +281,7 @@ clicks: 8
     <button>
       <img src="search.svg" />
     </button>
-    <div>Speichern</div>
+    <div>Zurücksetzen</div>
   </div>
 </form>
 ```
@@ -311,7 +311,7 @@ clicks: 8
     <button aria-label="Suchen">
       <img src="search.svg" alt="Such-Icon" />
     </button>
-    <button>Speichern</button>
+    <button>Zurücksetzen</button>
   </div>
 </form>
 ```
@@ -323,7 +323,7 @@ clicks: 8
   </label>
 
   <div>
-    <button>Speichern</button>
+    <button>Zurücksetzen</button>
     <button aria-label="Suchen">
       <img src="search.svg" alt="Such-Icon" />
     </button>

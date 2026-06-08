@@ -137,11 +137,11 @@ import '../styles/tree-diagram.css';
 
 <div class="tree-diagram-legend">
   <span class="flex items-center gap-1.5">
-    <span class="tree-diagram-badge tree-diagram-badge-container"><mdi-folder-outline /></span>
+    <span class="tree-diagram-badge tree-diagram-badge-container font-mono">C</span>
     Container
   </span>
   <span class="flex items-center gap-1.5">
-    <span class="tree-diagram-badge tree-diagram-badge-presentation"><mdi-file-outline /></span>
+    <span class="tree-diagram-badge tree-diagram-badge-presentation font-mono">P</span>
     Präsentation
   </span>
 </div>
@@ -189,7 +189,7 @@ import '../styles/tree-diagram.css';
         <span class="arch-practice-ui-label">PostCard</span>
         <div>
           <div class="arch-practice-text-strong">Vortrag TH Rosenheim</div>
-          <div class="arch-practice-text-subtle">vor 2 Stunden</div>
+          <div class="arch-practice-text-subtle">vor einer Stunde</div>
         </div>
       </div>
       <div class="arch-practice-component arch-practice-presentation">
@@ -320,7 +320,8 @@ right:
 import '../styles/tree-diagram.css';
 </script>
 
-<div class="project-structure-title text-orange-dark dark:text-orange-light">By Type</div>
+## Nach Typ {.project-structure-title.text-orange-dark.dark:text-orange-light}
+
 <ul class="tree-diagram">
   <li>
     <div class="tree-diagram-row"><mdi-folder-outline class="tree-diagram-badge project-structure-directory" /><span>components/</span></div>
@@ -348,7 +349,8 @@ import '../styles/tree-diagram.css';
 
 ::right::
 
-<div v-click class="project-structure-title text-green-dark dark:text-green-light">By Feature</div>
+## Nach Feature {v-click .project-structure-title.text-orange-dark.dark:text-orange-light}
+
 <ul v-after class="tree-diagram">
   <li>
     <div class="tree-diagram-row"><mdi-folder-outline class="tree-diagram-badge project-structure-feature" />features/profile/</div>
@@ -431,10 +433,6 @@ title: Architektur im Alltag
 
 </v-clicks>
 
-<p v-click class="mt-8 italic opacity-70">
-  Architektur ist kein Selbstzweck — sie reduziert Reibung im Alltag.
-</p>
-
 <!--
 Bis jetzt haben wir auf konkrete Architekturentscheidungen geschaut: Komponentenschnitte, State und Projektstruktur.
 
@@ -448,5 +446,5 @@ Und genau daran merkt man im Alltag sehr schnell, ob eine Architektur trägt ode
 
 [click] Deshalb ist Architektur auch die Grundlage für vieles, was danach kommt — Tests, Accessibility und Design-Systeme profitieren alle davon.
 
-[click] Architektur ist also kein Selbstzweck. Gute Struktur reduziert Reibung im Entwicklungsalltag.
+Architektur ist also kein Selbstzweck. Gute Struktur reduziert Reibung im Entwicklungsalltag.
 -->
