@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "@qaware-internal/slidev-theme-qaware": "github:qaware-internal/slidev-theme-qaware#community-theme",
+    "@qaware-internal/slidev-theme-qaware": "communitytheme",
     "@slidev/cli": "^52.14.1",
     "@slidev/client": "^52.14.2",
     "qrcode": "^1.5.4",

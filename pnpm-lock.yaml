@@ -12,8 +12,8 @@ importers:
         specifier: ^1.2.3
         version: 1.2.3
       '@qaware-internal/slidev-theme-qaware':
-        specifier: github:qaware-internal/slidev-theme-qaware#community-theme
-        version: git+https://git@github.com:qaware-internal/slidev-theme-qaware.git#9dd9c2b579650b525cecd8d9ac7f4bb91cecd30d(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))
+        specifier: communitytheme
+        version: 2.0.0-beta.1(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))
       '@slidev/cli':
         specifier: ^52.14.1
         version: 52.14.2(@nuxt/kit@3.21.2)(@types/markdown-it@14.1.2)(@types/node@22.19.15)(@vue/compiler-sfc@3.5.31)(markdown-it@14.1.1)(playwright-chromium@1.60.0)(postcss@8.5.8)
@@ -590,9 +590,8 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@qaware-internal/slidev-theme-qaware@git+https://git@github.com:qaware-internal/slidev-theme-qaware.git#9dd9c2b579650b525cecd8d9ac7f4bb91cecd30d':
-    resolution: {commit: 9dd9c2b579650b525cecd8d9ac7f4bb91cecd30d, repo: git@github.com:qaware-internal/slidev-theme-qaware.git, type: git}
-    version: 1.6.0
+  '@qaware-internal/slidev-theme-qaware@2.0.0-beta.1':
+    resolution: {integrity: sha512-IbgYA+FodGnuMBi1+6yBdhEp6Y8yjm3v9UHUhP4NEXuk093SJvrwGSMI1aycHkAooAJ08+BTvpKnj2T4BAHAAg==, tarball: https://npm.pkg.github.com/download/@qaware-internal/slidev-theme-qaware/2.0.0-beta.1/048ad605a7a738108c7a0fda00bb92f1b50a6a57}
     engines: {node: '>=18.0.0'}
 
   '@quansync/fs@1.0.0':
@@ -3482,7 +3481,7 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@qaware-internal/slidev-theme-qaware@git+https://git@github.com:qaware-internal/slidev-theme-qaware.git#9dd9c2b579650b525cecd8d9ac7f4bb91cecd30d(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))':
+  '@qaware-internal/slidev-theme-qaware@2.0.0-beta.1(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))':
     dependencies:
       '@iconify-json/bxl': 1.2.4
       '@slidev/types': 52.14.2(@nuxt/kit@3.21.2)(@vue/compiler-sfc@3.5.31)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.15)(jiti@2.6.1)(yaml@2.8.3))
