@@ -3,10 +3,14 @@ layout: chapter-split
 title: TypeScript
 chapter-number: '02'
 section:
-  duration: 15m
+  duration: 20m
 ---
 
 Typen als Sicherheitsnetz und Dokumentation
+
+<!--
+In diesem Kapitel schauen wir uns TypeScript an — warum es existiert, was es uns bringt, und wie es konkret in der Praxis hilft.
+-->
 
 ---
 title: 'JavaScript-Quiz: Arrays'
@@ -188,6 +192,7 @@ const user = {
     server.deleteUser(this.name);
   },
 };
+user.naem; // → undefined
 user.deelte();
 ```
 
@@ -198,6 +203,7 @@ const user = {
     server.deleteUser(this.name);
   },
 };
+user.naem; // → undefined
 user.deelte(); // → 💥 TypeError: user.deelte is not a function
 ```
 ````
@@ -205,7 +211,7 @@ user.deelte(); // → 💥 TypeError: user.deelte is not a function
 <!--
 user.naem — ein Tippfehler bei einer Property.
 
-[click] undefined. Kein Fehler. Und user.deelte() — ein Tippfehler bei einer Methode?
+[click] undefined. Kein Fehler. [click] Und user.deelte() — ein Tippfehler bei einer Methode?
 
 [click] Jetzt endlich ein Fehler — aber erst zur Laufzeit. TypeError.
 
@@ -214,6 +220,7 @@ All diese Bugs würde TypeScript sofort erkennen — beim Tippen, nicht erst zur
 
 ---
 title: Warum TypeScript?
+short-title: Warum TypeScript? (1/2)
 ---
 
 <v-click>
@@ -221,6 +228,22 @@ title: Warum TypeScript?
 JavaScript + Typen = **TypeScript**
 
 </v-click>
+
+<RenderWhen context="print">
+
+```js
+function calculatePrice(items, taxRate) {
+  let total = 0;
+  items.forEach((item) => {
+    total += item.price;
+  });
+  return total * (1 + taxRate);
+}
+
+calculatePrice([{ name: 'Book', price: 10 }], '19%'); // → NaN
+```
+
+<template #fallback>
 
 <v-click>
 
@@ -271,7 +294,10 @@ calculatePrice([{ name: 'Book', price: 10 }], '19%');
 ```
 ````
 <!-- prettier-ignore-end -->
+
 </v-click>
+</template>
+</RenderWhen>
 
 <style>
 * { --slidev-code-font-size: 1em }
@@ -293,6 +319,7 @@ Jetzt haben wir gesehen, dass JavaScript für sich allein durchaus riskant sein 
 
 ---
 title: Warum TypeScript?
+short-title: Warum TypeScript? (2/2)
 ---
 
 JavaScript + Typen = **TypeScript**
@@ -375,6 +402,20 @@ class PriceBadgeComponent {
 
 </v-click>
 
+<RenderWhen context="print">
+
+<!-- prettier-ignore-start -->
+```html
+<app-price-badge />
+^^^^^^^^^^^^^^^ Missing required input `amount`
+<app-price-badge [amount]="'19'" />
+                           ^^^^
+     Type 'string' is not assignable to type 'number'
+```
+<!-- prettier-ignore-end -->
+
+</RenderWhen>
+
 <v-click>
 
 <!-- prettier-ignore-start -->
@@ -425,6 +466,7 @@ TypeScript hilft nicht nur bei Funktionen, sondern auch bei Komponenten, bspw. i
 ---
 title: Sichere Refactorings
 clicks: 4
+short-title: Sichere Refactorings (1/2)
 ---
 
 <!-- prettier-ignore-start -->
@@ -447,11 +489,14 @@ Mit Typannotationen können wir leicht finden, welche Objekte ein bestimmtes Int
 
 [click] Da sieht man alle Stellen, an denen das Interface verwendet wird.
 
-[click] Das kann dann für Refactorings genutzt werden: Mit dem Rename-Tool der IDE aktualisieren wir alle Verwendungen, ohne Felder anderer Objekte zu verändern, die zufällig gleich heißen.
+[click] Das kann dann für Refactorings genutzt werden: 
+
+[click] Mit dem Rename-Tool der IDE aktualisieren wir alle Verwendungen, ohne Felder anderer Objekte zu verändern, die zufällig gleich heißen.
 -->
 
 ---
 title: Sichere Refactorings
+short-title: Sichere Refactorings (2/2)
 ---
 
 <!-- prettier-ignore-start -->

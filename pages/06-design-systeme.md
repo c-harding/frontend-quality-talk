@@ -117,7 +117,7 @@ Genau dadurch wird aus einer Sammlung von Bausteinen ein Design-System.
 -->
 
 ---
-title: Design Tokens bauen aufeinander auf
+title: Design-Tokens bauen aufeinander auf
 article-class: flex flex-col-reverse justify-center items-center gap-4 w-70cqw mx-auto
 ---
 
@@ -180,47 +180,41 @@ article-class: flex flex-col-reverse justify-center items-center gap-4 w-70cqw m
 <!--
 Ein häufiger Fehler ist: Tokens als eine flache Liste zu sehen.
 
-[click] Unten starten wir mit primitiven Tokens: reine Designwerte wie Farben, Abstände, Radius.
+[click] Unten starten wir mit primitiven Tokens: reine Designwerte wie Farben, Abstände, Radius und Schriftarten.
 
-[click] Darauf bauen semantische Tokens auf. Die geben Bedeutung statt Rohwerten, z. B. Primary Action oder Formular-Abstand.
+[click] Darauf bauen semantische Tokens auf. Die geben Bedeutung statt Rohwerten, zum Beispiel für primäre Aktionen, Formular-Abstände oder typografische Rollen.
 
-[click] Und ganz oben liegen Komponenten-Tokens: konkrete Ableitungen pro Baustein wie Button-Hintergrund oder Input-Fokus.
+[click] Und ganz oben liegen Komponenten-Tokens: konkrete Ableitungen pro Baustein wie Button-Hintergründe oder Textstile in einzelnen Komponenten.
 
 Dadurch baut alles aufeinander auf. Wir ändern unten einmal sinnvoll — und oben passt sich das Verhalten konsistent an.
 -->
 
 ---
-title: In der Praxis - von Wildwuchs zu Bausteinen
+title: 'Beispiel: Konsistente Dialoge'
+short-title: 'Beispiel: Konsistente Dialoge (1/3)'
+article-class: flex flex-col gap-4 -mt-8
+---
+
+<InconsistentDialogs destructive-right-action />
+
+::p{.mb-0.mt-auto!.text-center.text-lg.italic.opacity-80}
+Welche **gewollten** Unterschiede seht ihr?
+::
+
+<!--
+Wir nutzen nochmal dasselbe Beispiel wie am Anfang.
+
+Diesmal ist die Aufgabe aber eine andere: Nicht einfach nur Unterschiede finden, sondern die gewünschten Unterschiede erkennen. Welche seht ihr?
+-->
+
+---
+title: 'Beispiel: Konsistente Dialoge'
+short-title: 'Beispiel: Konsistente Dialoge (2/3)'
 article-class: flex flex-col gap-4 -mt-8
 hide-footer: true
 ---
 
-<v-switch at="1">
-<template #0>
 <InconsistentDialogs destructive-right-action />
-</template>
-<template #6>
-<div class="flex gap-8 justify-center items-start">
-<ConsistentDialog title="Änderungen speichern" primary-button-text="Speichern">
-  Sie haben ungespeicherte Änderungen. Möchten Sie diese speichern?
-</ConsistentDialog>
-<ConsistentDialog title="Datei löschen" primary-button-variant="destructive" primary-button-text="Löschen">
-  Möchten Sie die Datei <span class="font-mono">the final report v2.pdf</span> wirklich löschen?
-</ConsistentDialog>
-</div>
-</template>
-</v-switch>
-
-<v-switch class="mt-auto" at="1">
-<template #0>
-
-::p{.m-0.text-center.text-lg.italic.opacity-80}
-Welche **gewollten** Unterschiede seht ihr?
-::
-
-</template>
-
-<template #1>
 
 <table class="text-base practice-diff-table">
   <thead>
@@ -230,12 +224,12 @@ Welche **gewollten** Unterschiede seht ihr?
       <th>Rechts</th>
     </tr>
   </thead>
+  <tr>
+    <th>Titeltext</th>
+    <td><q>Änderungen speichern</q></td>
+    <td><q>Datei löschen</q></td>
+  </tr>
   <v-clicks>
-    <tr>
-      <th>Titeltext</th>
-      <td><q>Änderungen speichern</q></td>
-      <td><q>Datei löschen</q></td>
-    </tr>
     <tr>
       <th>Body-Text</th>
       <td><q>Sie haben ungespeicherte Änderungen.<br/>Möchten Sie diese speichern?</q></td>
@@ -254,10 +248,63 @@ Welche **gewollten** Unterschiede seht ihr?
   </v-clicks>
 </table>
 
-</template>
-<template #5-7>
+<style>
+table {
+  --uno: text-base;
 
-<div class="flex gap-8 justify-center *:flex-1">
+  th,
+  td {
+    --uno: p-2;
+  }
+
+  th {
+    --uno: font-semibold;
+  }
+
+  :deep(.slidev-vclick-hidden) {
+    --uno: border-b-transparent;
+  }
+}
+</style>
+
+<!--
+Die Titeltexte sollen sich natürlich unterscheiden.
+
+[click] Auch die Body-Texte sind unterschiedlich, weil sie unterschiedliche Informationen vermitteln. Hier sind sie Strings, aber wahrscheinlich wollen wir dynamischen Inhalt unterstützen, damit beispielsweise der Dateiname oder die Anzahl der ungespeicherten Änderungen automatisch eingefügt werden kann, am besten schön formatiert.
+
+[click] Auf der rechten Seite wird etwas gelöscht, also kennzeichen wir die destruktive Aktion auch visuell, z. B. mit roter Farbe. Diese Werte entsprechen den Tokens, die das Design-System bereitstellt.
+
+[click] Und schließlich ist das Label der Primary Action unterschiedlich: OK vs. Löschen. Wir können das tatsächlich verbessern: Speichern ist eindeutiger als OK.
+
+Der Unterschied beim Abbrechen-Label müssen wir nicht berücksichtigen: Vorher war es eher verwirrend, dass der linke Dialog den englischen Text „Cancel" hatte.
+
+Genau diese Inputs brauchen wir erstmal, um eine Komponente in unserem Design-System zu bauen. Aber danach können wir sie überall wiederverwenden — mit denselben Regeln, derselben Accessibility, und derselben Konsistenz.
+-->
+
+---
+title: 'Beispiel: Konsistente Dialoge'
+short-title: 'Beispiel: Konsistente Dialoge (3/3)'
+article-class: flex flex-col gap-4 -mt-8
+hide-footer: true
+---
+
+<v-switch at="1">
+<template #0>
+<InconsistentDialogs destructive-right-action />
+</template>
+<template #1>
+<div class="flex gap-8 justify-center items-start">
+<ConsistentDialog title="Änderungen speichern" primary-button-text="Speichern">
+  Sie haben ungespeicherte Änderungen. Möchten Sie diese speichern?
+</ConsistentDialog>
+<ConsistentDialog title="Datei löschen" primary-button-variant="destructive" primary-button-text="Löschen">
+  Möchten Sie die Datei <span class="font-mono">the final report v2.pdf</span> wirklich löschen?
+</ConsistentDialog>
+</div>
+</template>
+</v-switch>
+
+<div class="mt-auto flex gap-8 justify-center *:flex-1">
 
 <!--prettier-ignore-start-->
 ```html
@@ -289,44 +336,10 @@ pre { --slidev-code-font-size: 1rem }
 
 </div>
 
-</template>
-</v-switch>
-
-<style>
-table {
-  --uno: text-base;
-
-  th,
-  td {
-    --uno: p-2;
-  }
-
-  th {
-    --uno: font-semibold;
-  }
-
-  :deep(.slidev-vclick-hidden) {
-    --uno: border-b-transparent;
-  }
-}
-</style>
-
 <!--
-Wir nutzen nochmal dasselbe Beispiel wie am Anfang.
+So würde das dann im Code aussehen,
 
-Diesmal ist die Aufgabe aber eine andere: Nicht einfach nur Unterschiede finden, sondern die gewünschten Unterschiede erkennen. Welche seht ihr?
-
-[click] Die Titeltexte sollen sich natürlich unterscheiden.
-
-[click] Auch die Body-Texte sind unterschiedlich, weil sie unterschiedliche Informationen vermitteln. Hier sind sie Strings, aber wahrscheinlich wollen wir dynamischen Inhalt unterstützen, damit beispielsweise der Dateiname oder die Anzahl der ungespeicherten Änderungen automatisch eingefügt werden kann, am besten schön formatiert.
-
-[click] Auf der rechten Seite wird etwas gelöscht, also kennzeichen wir die destruktive Aktion auch visuell, z. B. mit roter Farbe. Diese Werte entsprechen den Tokens, die das Design-System bereitstellt.
-
-[click] Und schließlich ist das Label der Primary Action unterschiedlich: OK vs. Löschen. Der Unterschied beim Abbrechen-Label müssen wir nicht berücksichtigen: Vorher war es eher verwirrend, dass der linke Dialog den englischen Text „Cancel" hatte.
-
-Genau diese Inputs brauchen wir erstmal, um eine Komponente in unserem Design-System zu bauen. Aber danach können wir sie überall wiederverwenden — mit denselben Regeln, derselben Accessibility, und derselben Konsistenz.
-
-[click] So würde das dann im Code aussehen, [click] und jetzt sind die Dialoge komplett konsistent. Jeder zukünftige Dialog wird auch genauso aussehen, ohne dass man überhaupt HTML oder CSS schreiben muss.
+[click] und jetzt sind die Dialoge komplett konsistent. Jeder zukünftige Dialog wird auch genauso aussehen, ohne dass man überhaupt HTML oder CSS schreiben muss.
 -->
 
 ---

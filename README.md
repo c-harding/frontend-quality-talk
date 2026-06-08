@@ -1,25 +1,42 @@
-# Heatmapper: Digital Transformation with Third-Party APIs
+# Frontend Quality (Slide Deck)
 
-A talk for QAware Engineering Camp 26 (EC26) by Charlie Harding.
+Slide deck for a guest lecture at TH Rosenheim in the course **SQS (Software Qualitaetssicherung)**.
 
-## About
+The talk focuses on practical frontend quality topics for student project work, including:
 
-This talk traces the evolution of [Heatmapper](https://github.com/c-harding/heatmapper), a personal web application for visualizing Strava activities on interactive maps. What started as a digital continuation of hand-drawn routes on a paper map grew into a practical case study covering API integration, data management, GDPR compliance, cost optimization, and technical trade-offs.
+- TypeScript
+- Linting and formatting
+- Architecture and maintainability
+- Accessibility
+- Design systems
+- Hands-on exercise (“Fix the Frontend”)
 
-Through concrete challenges — from incomplete APIs and rate limits to new compliance requirements and browser storage limits — the talk shows how robust, future-proof software can emerge from a small hobby project, and how those learnings transfer directly to enterprise digital transformation.
+## Tech Stack
 
-## Topics
+- [Slidev](https://sli.dev/)
+- QAware Slidev theme (`@qaware-internal/slidev-theme-qaware`)
+- [`slidev-addon-timing-bar`](https://github.com/c-harding/slidev-addon-timing-bar)
 
-1. **Motivation** — From analog paper maps to a digital solution
-2. **From files to APIs** — GPX exports, Strava API, encoded polylines, GDPR as an architectural driver
-3. **Visualization** — Slippy maps to vector tiles, Mapbox, heatmap rendering, globe mode & 3D terrain
-4. **Data management** — Performance vs. cost vs. API limits, LocalStorage, delta updates, IndexedDB migration
-5. **Governance & compliance** — Strava API review, branding requirements, webhooks, privacy without personal data in the backend
+## Repository Structure
 
-## Getting Started
+- `slides.md` - main deck entry, chapter wiring
+- `pages/01-motivation.md` ... `pages/08-uebung.md` - chapter slides
+- `components/` - custom Vue components used in slides
+- `styles/` - shared slide styling
 
-- `pnpm install`
-- `pnpm dev`
-- Visit <http://localhost:3030>
+## Run Locally
 
-Learn more about Slidev at the [documentation](https://sli.dev/).
+```bash
+pnpm install
+pnpm dev
+```
+
+Then open:
+
+- <http://localhost:3030>
+
+## Build
+
+```bash
+pnpm build
+```

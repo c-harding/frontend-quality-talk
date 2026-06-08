@@ -326,8 +326,9 @@ import '../styles/tree-diagram.css';
   <li>
     <div class="tree-diagram-row"><mdi-folder-outline class="tree-diagram-badge project-structure-directory" /><span>components/</span></div>
     <ul>
-      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" /><span>ProfileCard.vue</span></div></li>
-      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" /><span>PostFilter.vue</span></div></li>
+      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" /><span>profile-card.component.ts</span></div></li>
+      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" /><span>post-filter.component.ts</span></div></li>
+      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" /><span>button.component.ts</span></div></li>
     </ul>
   </li>
   <li>
@@ -355,21 +356,21 @@ import '../styles/tree-diagram.css';
   <li>
     <div class="tree-diagram-row"><mdi-folder-outline class="tree-diagram-badge project-structure-feature" />features/profile/</div>
     <ul>
-      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" />ProfileCard.vue</div></li>
+      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" />profile-card.component.ts</div></li>
       <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" />profile.store.ts</div></li>
     </ul>
   </li>
   <li>
     <div class="tree-diagram-row"><mdi-folder-outline class="tree-diagram-badge project-structure-feature" />features/posts/</div>
     <ul>
-      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" />PostFilter.vue</div></li>
+      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" />post-filter.component.ts</div></li>
       <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" />post.service.ts</div></li>
     </ul>
   </li>
   <li>
     <div class="tree-diagram-row"><mdi-folder-outline class="tree-diagram-badge project-structure-directory" />shared/ui/</div>
     <ul>
-      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" />Button.vue</div></li>
+      <li><div class="tree-diagram-row"><mdi-file-outline class="tree-diagram-badge project-structure-file" />button.component.ts</div></li>
     </ul>
   </li>
 </ul>

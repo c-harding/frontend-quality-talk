@@ -99,16 +99,18 @@ Jetzt schauen wir uns an, wie das direkt im Code aussieht.
 
 ---
 title: ESLint in Aktion (JavaScript)
+short-title: ESLint in Aktion (JavaScript 1/3)
 ---
 
 <script setup>
 import './03-linting-eslint-rules.css';
 </script>
 
-<v-switch class="eslint-rules-switch">
-  <template #1>
+<div class="eslint-rules-switch" v-click>
 
 1. Nur definierte Variablen verwenden — `no-undef`
+
+</div>
 
 <RuleBadGoodTable>
   <template #bad>
@@ -130,12 +132,28 @@ function greet(username) {
 
   </template>
 </RuleBadGoodTable>
-</template>
 
-<template #2>
+<!--
+Wir starten mit einer der wichtigsten Basisregeln: `no-undef`.
+
+Nur definierte Variablen verwenden. Das hilft direkt gegen Tippfehler und vergessene Definitionen.
+-->
+
+---
+title: ESLint in Aktion (JavaScript)
+short-title: ESLint in Aktion (JavaScript 2/3)
+---
+
+<script setup>
+import './03-linting-eslint-rules.css';
+</script>
+
+<div class="eslint-rules-switch">
 
 1. Nur definierte Variablen verwenden — `no-undef`
 2. Unbenutzte Variablen vermeiden — `no-unused-vars`
+
+</div>
 
 <RuleBadGoodTable>
   <template #bad>
@@ -155,13 +173,29 @@ return length;
 
   </template>
 </RuleBadGoodTable>
-</template>
 
-<template #3-5>
+<!--
+Als Nächstes kommt `no-unused-vars`.
+
+Alles entfernen, was nicht genutzt wird. Das hält den Code kompakter und reduziert Verwirrung beim Lesen.
+-->
+
+---
+title: ESLint in Aktion (JavaScript)
+short-title: ESLint in Aktion (JavaScript 3/3)
+---
+
+<script setup>
+import './03-linting-eslint-rules.css';
+</script>
+
+<div class="eslint-rules-switch">
 
 1. Nur definierte Variablen verwenden — `no-undef`
 2. Unbenutzte Variablen vermeiden — `no-unused-vars`
 3. Bedingungen immer mit Block — `curly`
+
+</div>
 
 <RuleBadGoodTable>
   <template #bad>
@@ -184,38 +218,37 @@ if (isAdmin) {
 
   </template>
 </RuleBadGoodTable>
-</template>
-</v-switch>
 
-<v-click at="4">
+<v-click>
 
 ✨ automatisch korrigierbar
 
 </v-click>
 
 <!--
-Wir starten mit drei einfachen Regeln, die fast jeder sofort nachvollziehen kann.
+Zum Schluss `curly`: Kontrollstrukturen immer mit geschweiften Klammern.
 
-[click] `no-undef`: nur Variablen verwenden, die wirklich definiert sind. Das hilft gegen Tippfehler und vergessene Definitionen.
+Das macht den Kontrollfluss klarer und verhindert Fehler bei späteren Erweiterungen.
 
-[click] `no-unused-vars`: alles entfernen, was nicht genutzt wird. Solche Variablen sind oft ein Zeichen für unvollständiges Refactoring, blähen den Code auf und verwirren beim Lesen.
-
-[click] `curly`: Kontrollstrukturen immer mit geschweiften Klammern. Das macht den Kontrollfluss klarer und verhindert Fehler bei späteren Erweiterungen.
-
-[click] Und das Beste: Viele Regeln können automatisch korrigiert werden. In der IDE kann man es so konfigurieren, dass solche Probleme direkt beim Speichern behoben werden.
+[click] Und das Beste: Viele Regeln können automatisch korrigiert werden. In der IDE kann man das so konfigurieren, dass solche Probleme direkt beim Speichern behoben werden.
 -->
 
 ---
 title: ESLint in Aktion (TypeScript)
-clicks: 3
+short-title: ESLint in Aktion (TypeScript 1/3)
 ---
 
-<v-switch class="eslint-rules-switch">
-  <template #1>
+<script setup>
+import './03-linting-eslint-rules.css';
+</script>
+
+<div class="eslint-rules-switch" v-click>
 
 1. Kein explizites `any` — `@typescript-eslint/no-explicit-any`
 
-<RuleBadGoodTable>
+</div>
+
+<RuleBadGoodTable v-after>
   <template #bad>
 
 <!-- prettier-ignore-start -->
@@ -243,12 +276,30 @@ function printValue(
 
   </template>
 </RuleBadGoodTable>
-</template>
 
-<template #2>
+<!--
+Nachdem wir jetzt TypeScript haben, können wir auch Regeln nutzen, die speziell auf die typischen Fallstricke von TypeScript abzielen.
+
+Hier starten wir mit `no-explicit-any`: Wir vermeiden `any`, damit die Typprüfung nicht umgangen wird. `any` bedeutet im Grunde: „TypeScript, vertraue mir einfach“.
+
+Statt `any` nutzen wir konkrete Typen. Wenn das nicht möglich ist, sind `unknown`, `never` oder Generics meist die bessere Wahl.
+-->
+
+---
+title: ESLint in Aktion (TypeScript)
+short-title: ESLint in Aktion (TypeScript 2/3)
+---
+
+<script setup>
+import './03-linting-eslint-rules.css';
+</script>
+
+<div class="eslint-rules-switch">
 
 1. Kein explizites `any` — `@typescript-eslint/no-explicit-any`
 2. Keine floating Promises — `@typescript-eslint/no-floating-promises`
+
+</div>
 
 <RuleBadGoodTable>
   <template #bad>
@@ -278,13 +329,29 @@ await saveUser(user);
 
   </template>
 </RuleBadGoodTable>
-</template>
 
-<template #3>
+<!--
+Die zweite wichtige Regel ist `no-floating-promises`.
+
+Asynchrone Aufrufe müssen bewusst behandelt werden, sonst gehen Fehler still verloren. Deshalb wird der Aufruf hier korrekt mit `await` abgefangen.
+-->
+
+---
+title: ESLint in Aktion (TypeScript)
+short-title: ESLint in Aktion (TypeScript 3/3)
+---
+
+<script setup>
+import './03-linting-eslint-rules.css';
+</script>
+
+<div class="eslint-rules-switch">
 
 1. Kein explizites `any` — `@typescript-eslint/no-explicit-any`
 2. Keine floating Promises — `@typescript-eslint/no-floating-promises`
 3. Sichere Template-Strings — `@typescript-eslint/restrict-template-expressions`
+
+</div>
 
 <RuleBadGoodTable>
   <template #bad>
@@ -310,27 +377,21 @@ const label =
 
   </template>
 </RuleBadGoodTable>
-</template>
-</v-switch>
 
 <!--
-Nachdem wir jetzt TypeScript haben, können wir auch Regeln nutzen, die speziell auf die typischen Fallstricke von TypeScript abzielen. Diese können auch die Typinformationen nutzen, um noch smarter zu sein.
+Zum Abschluss: `restrict-template-expressions`.
 
-[click] no-explicit-any: Wir vermeiden `any`, damit die Typprüfung nicht umgangen wird. `any` bedeutet im Grunde: „TypeScript, vertraue mir einfach“. Danach sind fast alle Prüfungen an dieser Stelle weg.
+In Template-Strings sollen nur passende Typen landen, damit keine unerwarteten Ausgaben entstehen.
 
-Statt `any` soll man konkrete Types verwenden. Wenn das nicht möglich ist, gibt es `unknown` (Ich weiß nicht, um was für einen Datentyp es sich handelt, und möchte das explizit so markieren), `never` (Der Fall sollte nie eintreten), oder Generics (Ich möchte, dass der Aufrufer den Typ angibt, damit es trotzdem sicher bleibt).
-
-[click] no-floating-promises: Asynchrone Aufrufe müssen behandelt werden, sonst gehen Fehler still verloren.
-
-[click] restrict-template-expressions: In Template-Strings sollen nur passende Typen landen, damit keine unerwarteten Ausgaben entstehen. Wenn man ein Objekt in ein String implizit umwandelt, kommt oft „Object Object“.
+Wenn man ein Objekt implizit zu String macht, erhält man oft `[object Object]`. Mit der Regel wird stattdessen der konkrete Wert genutzt, hier `user.name`.
 -->
 
 ---
 title: Prettier
+short-title: Prettier (1/2)
 ---
 
-<v-switch>
-  <template #1>
+<v-click>
 
 <!-- prettier-ignore-start -->
 ```ts
@@ -341,9 +402,18 @@ return user. firstName+' ' +user.lastName}
 ```
 <!-- prettier-ignore-end -->
 
-  </template>
+</v-click>
 
-<template #2-6>
+<!--
+Bis jetzt ging es vor allem um Linting-Regeln. Für reines Formatieren nehmen viele Teams zusätzlich Prettier.
+
+[click] Das ist ein Beispiel ohne einheitliche Formatierung: alles funktioniert, aber es liest sich anstrengend.
+-->
+
+---
+title: Prettier
+short-title: Prettier (2/2)
+---
 
 ```ts
 function buildLabel(user) {
@@ -354,10 +424,7 @@ function buildLabel(user) {
 }
 ```
 
-  </template>
-</v-switch>
-
-<v-clicks at="3" class="mt-4">
+<v-clicks class="mt-4">
 
 - Kein Streit über Formatierung
 - Komplett automatisch in der IDE
@@ -366,11 +433,7 @@ function buildLabel(user) {
 </v-clicks>
 
 <!--
-Bis jetzt ging es vor allem um Linting-Regeln. Für reines Formatieren nehmen viele Teams zusätzlich Prettier.
-
-[click] Das ist ein Beispiel ohne einheitliche Formatierung: alles funktioniert, aber es liest sich anstrengend.
-
-[click] Und so sieht derselbe Code nach Prettier aus: konsistente Einrückung, Zeilenumbrüche und einheitlicher Stil.
+Und so sieht derselbe Code nach Prettier aus: konsistente Einrückung, Zeilenumbrüche und einheitlicher Stil.
 
 [click] Der große Vorteil: Stilfragen werden automatisch entschieden, damit wir im Team mehr über Logik und weniger über Formatierung diskutieren.
 

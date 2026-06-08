@@ -199,56 +199,119 @@ Alle vier Prinzipien greifen ineinander. Wer einen verbessert, erleichtert die N
 
 ---
 title: Mini Accessibility-Audit
+short-title: Mini Accessibility-Audit (1/2)
 inner-split: 35
-left:
-  class: flex flex-col
-right:
-  class: flex flex-col
-hide-footer: true
-clicks: 8
 ---
 
 <div class="rounded-xl border-2 border-zinc-400 dark:border-zinc-600 bg-zinc-50 dark:bg-zinc-900/60 p-5 flex flex-col gap-4">
   <div class="uppercase tracking-widest font-mono opacity-70">Beispiel</div>
 
   <label class="flex gap-2 items-center">
-      <span v-if="$clicks >= 2" class="text-base transition-opacity duration-200" :class="{'opacity-30': $clicks === 2, 'opacity-100': $clicks >= 3}">Suche</span>
-    <input class="rounded flex-1 border border-zinc-400 dark:border-zinc-600 px-3 py-2 text-sm bg-white dark:bg-zinc-800" :placeholder="$clicks < 1 ? 'Suche' : ''" :value="$clicks > 0 ? 'Rosenheim' : ''" />
+    <input class="rounded flex-1 border border-zinc-400 dark:border-zinc-600 px-3 py-2 text-sm bg-white dark:bg-zinc-800" placeholder="Suche" />
   </label>
 
   <div class="flex items-center gap-3 flex-row-reverse">
-    <div class="audit-click-bad outline-blue-dark dark:outline-blue-light" :class="{ 'text-1rem! px-4! py-2!': $clicks >= 4, 'outline': $clicks === 7 }"><mdi-image-broken v-if="$clicks === 5" /><mdi-magnify v-else /></div>
-    <div class="audit-click-bad" :class="{ 'text-1rem! px-4! py-2!': $clicks >= 4 }">Speichern</div>
+    <div class="audit-btn outline-blue-dark dark:outline-blue-light"><mdi-magnify /></div>
+    <div class="audit-btn">Zurücksetzen</div>
   </div>
 </div>
 
-<v-switch class="mt-auto audit-success">
+<style>
+.audit-success {
+  --uno: rounded-md border border-green-dark 'dark:border-green-light' bg-green-light/10 text-green-dark 'dark:text-green-light' px-3 py-2 text-sm not-italic opacity-90;
+}
+</style>
 
-<template #2>Der Input hat ein Label.</template>
+::right::
 
-<template #3>Das Label hat genug Kontrast.</template>
+<!--prettier-ignore-start-->
+```html
+<form id="search-form">
+  <input placeholder="Suche" 
+         name="search-term" />
 
-<template #4-5>Die Buttons sind groß genug.</template>
-
-<template #6-7>Das Icon hat eine Text-Beschreibung.</template>
-
-<template #8>Die Tab-Reihenfolge stimmt mit der visuellen Reihenfolge überein.</template>
-</v-switch>
+  <div>
+    <button>
+      <img src="search.svg" />
+    </button>
+    <div>Zurücksetzen</div>
+  </div>
+</form>
+```
+<!--prettier-ignore-end-->
 
 <style>
-.audit-btn-bad {
-  --uno: text-xs rounded border border-zinc-400 'dark:border-zinc-600' px-2 py-1 flex items-center justify-center transition-all duration-200;
-}
-
-.audit-click-bad {
+.audit-btn {
   --uno: text-xs rounded border border-zinc-400 'dark:border-zinc-600' px-2 py-1 cursor-pointer transition-all duration-200;
 }
 
-.audit-hints {
-  --uno: text-xs opacity-75 flex flex-col gap-1;
+.slidev-code, .slidev-code-wrapper {
+  --slidev-code-font-size: 1.25rem;
+}
+</style>
+
+<!--
+Wir machen jetzt keinen Deep-Dive, sondern einen Mini-Audit wie im echten Review.
+
+Links ein typischer Ausschnitt: Suchfeld und Aktionen. Auf den ersten Blick „funktioniert es“.
+
+Rechts seht ihr das zugrunde liegende HTML.
+
+Erstens: Input ohne sichtbares Label.
+-->
+
+---
+title: Mini Accessibility-Audit
+short-title: Mini Accessibility-Audit (2/2)
+inner-split: 35
+clicks: 7
+---
+
+<script setup lang="ts">
+const items = {
+  1: 'Der Input hat ein Label.',
+  2: 'Das Label hat genug Kontrast.',
+  3: 'Die Buttons sind groß genug.',
+  5: 'Das Icon hat eine Text-Beschreibung.',
+  7: 'Die Tab-Reihenfolge stimmt mit der visuellen Reihenfolge überein.'
+};
+</script>
+
+<div class="rounded-xl border-2 border-zinc-400 dark:border-zinc-600 bg-zinc-50 dark:bg-zinc-900/60 p-5 flex flex-col gap-4">
+  <div class="uppercase tracking-widest font-mono opacity-70">Beispiel</div>
+
+  <label class="flex gap-2 items-center">
+      <span v-if="$clicks >= 1" class="text-base transition-opacity duration-200" :class="{'opacity-30': $clicks === 1, 'opacity-100': $clicks >= 2}">Suche</span>
+    <input class="rounded flex-1 border border-zinc-400 dark:border-zinc-600 px-3 py-2 text-sm bg-white dark:bg-zinc-800" value="Rosenheim" />
+  </label>
+
+  <div class="flex items-center gap-3 flex-row-reverse">
+    <div class="audit-btn outline-blue-dark dark:outline-blue-light" :class="{ 'text-1rem! px-4! py-2!': $clicks >= 3, 'outline': $clicks === 6 }">
+      <mdi-magnify v-if="$clicks < 4" />
+      <mdi-image-broken v-else-if="$clicks === 4" />
+      <template v-else>Search</template>
+    </div>
+    <div class="audit-btn" :class="{ 'text-1rem! px-4! py-2!': $clicks >= 3 }">Zurücksetzen</div>
+  </div>
+</div>
+
+<RenderWhen context="print">
+<ul class="text-sm"><li v-for="(item, i) in items" :key="i">{{ item }}</li></ul>
+<template #fallback>
+
+<div class="mt-auto audit-success" v-if="$clicks in items">
+  {{ items[$clicks] }}
+</div>
+
+</template>
+</RenderWhen>
+
+<style>
+.audit-btn {
+  --uno: text-xs rounded border border-zinc-400 'dark:border-zinc-600' px-2 py-1 cursor-pointer transition-all duration-200;
 }
 
-.audit-success > :deep(.slidev-vclick-current) {
+.audit-success {
   --uno: rounded-md border border-green-dark 'dark:border-green-light' bg-green-light/10 text-green-dark 'dark:text-green-light' px-3 py-2 text-sm not-italic opacity-90;
 }
 </style>
@@ -257,7 +320,7 @@ clicks: 8
 
 <!--prettier-ignore-start-->
 ````md magic-move {at:1}
-```html {|}
+```html
 <form id="search-form">
   <input placeholder="Suche" 
          name="search-term" />
@@ -296,7 +359,7 @@ clicks: 8
     <button>
       <img src="search.svg" />
     </button>
-    <button>Speichern</button>
+    <button>Zurücksetzen</button>
   </div>
 </form>
 ```
@@ -340,13 +403,7 @@ clicks: 8
 </style>
 
 <!--
-Wir machen jetzt keinen Deep-Dive, sondern einen Mini-Audit wie im echten Review.
-
-Links ein typischer Ausschnitt: Suchfeld und Aktionen. Auf den ersten Blick „funktioniert es“.
-
-Rechts seht ihr das zugrunde liegende HTML.
-
-Erstens: Input ohne sichtbares Label. [click] Ein Platzhalter reicht nicht, weil er verschwindet, sobald man etwas eingibt.
+[click] Ein Platzhalter reicht nicht, weil er verschwindet, sobald man etwas eingibt.
 
 [click] Mit einem Label sieht es besser aus.
 

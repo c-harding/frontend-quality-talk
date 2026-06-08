@@ -1,11 +1,11 @@
 ---
 theme: '@qaware-internal/slidev-theme-qaware'
 title: UI/UX Qualitätssicherung
-shortTitle: Titel
-duration: 90m
+short-title: Titel
+duration: 195m
 section:
   duration: 1m
-endTime: '09:30'
+endTime: '11:15'
 color: purple
 author: Charlie Harding · QAware GmbH
 authorUrl: qaware.de
@@ -54,18 +54,22 @@ q-placements: KL
 
 <img src="/media/cha.jpeg"  class="rounded-full w-70 mx-auto" />
 
-<!--
-Kurz zu mir: Ich bin Charlie.
-
-Ich habe in Bristol Informatik studiert, [click] mit einem Jahr in München als Erasmus-Student.
--->
-
 ::footer::
 
 #gernPerDu
 
+<!--
+Kurz zu mir: Ich bin Charlie.
+
+Ich habe in Bristol, England, Informatik studiert, [click] mit einem Jahr in München als Erasmus-Student.
+
+[click] Seit 2020 arbeite ich bei der QAware in München als Senior Software Engineer mit Fokus auf Frontend-Entwicklung.
+
+Warum erzähle ich das? Weil ich viele der typischen Frontend-Probleme selbst in Projekten gesehen habe: inkonsistente UI, schwer wartbarer Code, und Accessibility, die zu spät mitgedacht wird.
+-->
+
 ---
-shortTitle: Agenda
+short-title: Agenda
 q-placements: JD
 hide-footer: true
 inner-split: 25
@@ -93,6 +97,8 @@ Agenda
 
 **07** Learnings / Q&A
 
+**08** Übung
+
 <style>
 
 strong {
@@ -107,10 +113,15 @@ span {
 
 <!--
 Kurzer Überblick: Wir starten mit der Frage, warum Frontend-Qualität überhaupt ein Thema ist.
+
 Dann schauen wir uns TypeScript, Linting und Architektur als konkrete Werkzeuge an.
+
 Danach geht es um Accessibility und Design-Systeme — also Qualität aus Nutzersicht.
+
 Zum Schluss: Learnings und eure Fragen.
 Aber ihr könnt gerne jederzeit Fragen stellen — nicht erst am Ende.
+
+Dann kommen wir zur Übung, wo ihr das Gelernte direkt anwenden könnt.
 -->
 
 ---
@@ -140,3 +151,24 @@ src: ./pages/06-design-systeme.md
 ---
 src: ./pages/07-abschluss.md
 ---
+
+---
+src: ./pages/08-uebung.md
+---
+
+---
+layout: end
+---
+
+::middle::
+
+::default::
+
+**Charlie Harding**
+
+<EndLink to="charlie.harding@qaware.de"></EndLink>
+
+::right::
+
+<SmartLink to="github.com/c-harding/frontend-quality"><mdi-github /> c-harding/frontend-quality</SmartLink><br />
+<SmartLink to="github.com/c-harding/frontend-quality-talk"><mdi-github /> c-harding/frontend-quality-talk</SmartLink>

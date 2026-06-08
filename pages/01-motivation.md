@@ -22,7 +22,7 @@ Kurze Frage an euch: Wer hat schon mal in einem Teamprojekt gearbeitet, wo das F
 
 [click] Dann baut jemand anderes einen zweiten Dialog — diesmal zum Löschen. Sieht schon anders aus.
 
-[click] Später wird die Button-Farbe im Lösch-Dialog auf Rot geändert — aber nur dort.
+[click] Später wird die Button-Farbe im Lösch-Dialog auf Rot geändert — und die Änderung hat unerwartete Auswirkungen auf den ersten Dialog, was erst viel später auffällt.
 -->
 
 ---
