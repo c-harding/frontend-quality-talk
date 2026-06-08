@@ -31,7 +31,7 @@ article-class: text-center flex flex-col items-center justify-around
 <!--
 Ich stelle eine Frage: Wer von euch nutzt Accessibility-Features? Hebt die Hand auf, wenn das auf euch zutrifft.
 
-[click] Erstes: Screen Reader zum Navigieren im Web.
+[click] Erstens: Screen Reader zum Navigieren im Web.
 
 [click] Speech-to-Text.
 

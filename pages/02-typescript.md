@@ -35,7 +35,7 @@ JavaScript ist die Sprache des Webs — aber sie hat ihre Eigenheiten.
 JavaScript ist die Sprache des Webs. Jeder Browser kann es, jedes Frontend benutzt es.
 Aber JavaScript hat Eigenheiten.
 
-Die Sprache wurde initial so gebaut, damit Fehler möglichst selten auftauchen — auch wenn ein Fehler eigentlich besser als stille Fehlfunktion wäre.
+Die Sprache wurde initial so gebaut, damit Fehler möglichst selten auftauchen — auch wenn ein Fehler eigentlich besser als eine stille Fehlfunktion wäre.
 
 [click] Kleines Quiz — was ergibt Array plus Array?
 

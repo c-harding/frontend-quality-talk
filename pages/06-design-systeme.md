@@ -393,7 +393,7 @@ Tokens + Komponenten-Doku
 <!--
 Sobald die Bausteine des Design-Systems stehen, wird die Zusammenarbeit zwischen Design, Entwicklung und QA viel einfacher.
 
-[click] Design wählt passende Bausteine aus, definiert das gewünschte UI-Pattern und liefert Entwurfe anhand von Tokens und Komponenten statt Pixelwerte.
+[click] Design wählt passende Bausteine aus, definiert das gewünschte UI-Pattern und liefert Entwürfe anhand von Tokens und Komponenten statt Pixelwerte.
 
 [click] Entwicklung baut daraus das konkrete Feature zusammen. Weil Design schon kennt, welche Konfig-Optionen die Komponenten anbieten, sind die Entwürfe viel einfacher umzusetzen. Und Accessibility ist direkt eingebaut, weil die Bausteine das schon berücksichtigen.
 

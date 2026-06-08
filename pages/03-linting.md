@@ -313,7 +313,7 @@ const label =
 </v-switch>
 
 <!--
-Nachdem wir jetzt TypeScript haben, können wir auch Regeln nutzen, die speziell auf die typischen Fallstricke von TypeScript abzielen. Diese können auch die Typinfomationen nutzen, um noch smarter zu sein.
+Nachdem wir jetzt TypeScript haben, können wir auch Regeln nutzen, die speziell auf die typischen Fallstricke von TypeScript abzielen. Diese können auch die Typinformationen nutzen, um noch smarter zu sein.
 
 [click] no-explicit-any: Wir vermeiden `any`, damit die Typprüfung nicht umgangen wird. `any` bedeutet im Grunde: „TypeScript, vertraue mir einfach“. Danach sind fast alle Prüfungen an dieser Stelle weg.
 
@@ -375,7 +375,7 @@ Bis jetzt ging es vor allem um Linting-Regeln. Für reines Formatieren nehmen vi
 
 [click] Man muss gar nicht darüber nachdenken, weil der Code direkt in der IDE korrigiert wird, sobald man speichert.
 
-[click] Außerdem werden Merges einfacher, weil keine inkompatible Formatierungs-Änderungen mehr gibt.
+[click] Außerdem werden Merges einfacher, weil es keine inkompatiblen Formatierungs-Änderungen mehr gibt.
 -->
 
 ---
