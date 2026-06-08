@@ -51,6 +51,10 @@ right:
   <mdi-presentation/> Slides
 </EndLink>
 
+<EndLink to="https://c-harding.github.io/frontend-quality-talk/main/notes-export.pdf">
+  <mdi-file-pdf-box/> Handout
+</EndLink>
+
 <EndLink to="https://github.com/c-harding/frontend-quality/">
   <mdi-github/> Exercise Repository
 </EndLink>

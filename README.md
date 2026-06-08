@@ -11,6 +11,11 @@ The talk focuses on practical frontend quality topics for student project work, 
 - Design systems
 - Hands-on exercise (“Fix the Frontend”)
 
+## Links
+
+- [Slides](https://c-harding.github.io/frontend-quality-talk/)
+- [Handout (PDF)](https://c-harding.github.io/frontend-quality-talk/main/notes-export.pdf)
+
 ## Tech Stack
 
 - [Slidev](https://sli.dev/)
