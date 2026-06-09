@@ -535,7 +535,7 @@ title: API-Verträge
 
 - Shared Types
 
-- Generiert aus API-Verträgen (z. B. OpenAPI- oder GraphQL-Schema)
+- Generiert aus API-Verträgen (z. B. OpenAPI-/Swagger- oder GraphQL-Schema)
 
 - Backend ändert Response → Frontend-Build bricht sofort
 

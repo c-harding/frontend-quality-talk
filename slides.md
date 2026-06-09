@@ -23,6 +23,10 @@ Frontends bauen, die halten
 Charlie Harding
 <SmartLink to="charlie.harding@qaware.de"/>
 
+::footerRight::
+
+<SmartLink to="https://c-harding.github.io/frontend-quality-talk/main/notes-export.pdf"><mdi-file-document-outline /> Handout</SmartLink>
+
 ---
 title: Wer bin ich?
 inner-split: 70

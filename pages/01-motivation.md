@@ -3,7 +3,7 @@ layout: chapter-split
 title: Motivation
 chapter-number: '01'
 section:
-  duration: 10m
+  duration: 8m
 ---
 
 Warum ist Frontend-Qualität so wichtig?

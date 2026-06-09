@@ -3,7 +3,7 @@ layout: chapter-split
 title: Linting & Formatting
 chapter-number: '03'
 section:
-  duration: 8m
+  duration: 15m
   buffer: 2m
 ---
 
@@ -534,3 +534,16 @@ Das war’s dann für automatische Checks. Zusammenfassend:
 
 [click] Dann haben wir weniger Diskussionen über Stil und mehr Zeit für die eigentliche Fachlogik.
 -->
+
+---
+title: Pause
+layout: end
+q-placements: MN
+section:
+  duration: 5m
+  buffer: 5m
+---
+
+<div class="text-200px font-bold">Pause</div>
+
+10 Min
