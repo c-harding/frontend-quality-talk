@@ -14,7 +14,7 @@ Bis jetzt haben wir uns um die Qualität einzelner Codezeilen gekümmert: korrek
 
 Aber selbst wenn jede Zeile für sich gut ist, kann das große Ganze trotzdem unübersichtlich werden. Komponenten, die zu viel wissen. Abhängigkeiten, die sich quer durch die Anwendung ziehen. Logik, die man nicht mehr findet, weil sie irgendwo tief versteckt ist.
 
-Das Ziel dahinter ist immer dasselbe: Änderungen lokal halten und Komplexität begrenzen.
+Das Ziel dahinter ist immer dasselbe: Änderungen lokal zu halten und Komplexität zu begrenzen.
 
 Darum geht es jetzt: Wie schneiden wir Komponenten sinnvoll? Wie halten wir Datenflüsse nachvollziehbar? Und wie legen wir eine Projektstruktur an, die auch noch in einem Jahr verständlich ist?
 
@@ -406,6 +406,8 @@ import '../styles/tree-diagram.css';
 </style>
 
 <!--
+Wie strukturieren wir denn das ganze im File-System?
+
 Hier sehen wir denselben Code in zwei unterschiedlichen Strukturen.
 
 Links nach Dateitypen: Komponenten, Stores, Services in getrennten Ordnern.
@@ -416,9 +418,7 @@ Das wirkt erstmal ordentlich, aber fachlich zusammengehöriger Code liegt weit a
 [click] Rechts nach Features: Alles, was zu Profile oder Posts gehört, liegt zusammen.
 Das reduziert Kontextwechsel und hält Änderungen lokaler.
 
-[click] Feature-Code bleibt lokal, Shared bleibt bewusst klein und generisch.
-
-Shared ist bewusst klein: nur wirklich generische, wiederverwendbare Bausteine.
+[click] Shared ist bewusst klein: nur wirklich generische, wiederverwendbare Bausteine.
 So bleiben die Grenzen zwischen feature-spezifischem Code und Shared Components klar.
 -->
 

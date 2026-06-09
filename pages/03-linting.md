@@ -89,7 +89,7 @@ q-placements: JD
 <!--
 ESLint steht für ECMAScript Linter. ECMAScript ist der Sprachstandard, auf dem JavaScript basiert.
 
-Ein Linter ist allgemein ein Werkzeug, das Quellcode automatisch auf bestimmte Regeln und mögliche Probleme prüft.
+Ein Linter ist ein Werkzeug, das Quellcode automatisch auf bestimmte Regeln und mögliche Probleme prüft.
 
 Kurz gesagt: ESLint prüft Code auf typische Probleme und hilft beim Einhalten von Stilregeln.
 
@@ -113,12 +113,12 @@ import './03-linting-eslint-rules.css';
 
 </div>
 
-<RuleBadGoodTable>
+<RuleBadGoodTable v-after>
   <template #bad>
 
 ```js
 function greet() {
-  return username;
+  console.log('Hi', username);
 }
 ```
 
@@ -127,7 +127,7 @@ function greet() {
 
 ```js
 function greet(username) {
-  return username;
+  console.log('Hi', username);
 }
 ```
 
@@ -227,7 +227,7 @@ if (isAdmin) {
 </v-click>
 
 <!--
-Zum Schluss `curly`: Kontrollstrukturen immer mit geschweiften Klammern.
+Zum Schluss `curly`: sie kontrolliert, dass Kontrollstrukturen immer mit geschweiften Klammern geschrieben werden.
 
 Das macht den Kontrollfluss klarer und verhindert Fehler bei späteren Erweiterungen.
 
@@ -281,9 +281,11 @@ function printValue(
 <!--
 Nachdem wir jetzt TypeScript haben, können wir auch Regeln nutzen, die speziell auf die typischen Fallstricke von TypeScript abzielen.
 
-Hier starten wir mit `no-explicit-any`: Wir vermeiden `any`, damit die Typprüfung nicht umgangen wird. `any` bedeutet im Grunde: „TypeScript, vertraue mir einfach“.
+[click] Hier starten wir mit `no-explicit-any`: Wir vermeiden `any`, damit die Typprüfung nicht umgangen wird. `any` bedeutet im Grunde: „TypeScript, vertraue mir einfach“.
 
 Statt `any` nutzen wir konkrete Typen. Wenn das nicht möglich ist, sind `unknown`, `never` oder Generics meist die bessere Wahl.
+
+Hier würde ich dazu erwähnen, dass Methodenparameter auch `any` sind, wenn ihr Typ nicht explizit angegeben wird. Dagegen schützt aber TypeScript direkt, zumindest in Strict-Mode.
 -->
 
 ---
@@ -384,7 +386,7 @@ Zum Abschluss: `restrict-template-expressions`.
 
 In Template-Strings sollen nur passende Typen landen, damit keine unerwarteten Ausgaben entstehen.
 
-Wenn man ein Objekt implizit zu String macht, erhält man oft `[object Object]`. Mit der Regel wird stattdessen der konkrete Wert genutzt, hier `user.name`.
+Wenn man ein Objekt implizit zu String macht, erhält man oft `[object Object]`. Mit der Regel wird stattdessen einen String genutzt, hier `user.name`.
 -->
 
 ---
@@ -408,7 +410,7 @@ return user. firstName+' ' +user.lastName}
 <!--
 Bis jetzt ging es vor allem um Linting-Regeln. Für reines Formatieren nehmen viele Teams zusätzlich Prettier.
 
-[click] Das ist ein Beispiel ohne einheitliche Formatierung: alles funktioniert, aber es liest sich anstrengend.
+[click] Das ist ein Beispiel ohne einheitliche Formatierung: alles funktioniert, aber es liest sich anstrengend. Die Einrückungen sind bedeutungslos und anstrengend, und man durchblickt nicht mal, welche Klammern zusammen gehören.
 -->
 
 ---
@@ -446,7 +448,8 @@ Und so sieht derselbe Code nach Prettier aus: konsistente Einrückung, Zeilenumb
 ---
 title: CI Pipeline
 clicks: 5
-articleClass: mx-10 flex-0 mb-auto mt-4 rounded-lg border border-zinc-600 bg-white p-6 text-black
+articleClass: mx-10 flex-0 mb-auto mt-4 rounded-lg border border-zinc-600
+  bg-white p-6 text-black
 ---
 
 <script setup lang="ts">
@@ -491,8 +494,7 @@ const states = computed(() => ({ 'Lint': $clicks.value < 5 ? 'warn' : 'pass' }))
 <!--
 Bis jetzt haben wir Linting und Formatting vor allem als Werkzeuge im Editor gesehen.
 
-Aber viel wichtiger ist eigentlich die Pipeline, die bei einem Pull-Request läuft.
-Hier ist ein Beispiel, was wir alles hier automatisieren können.
+Nachdem wir im Editor fertig sind, können wir den Code zum Review von den Kollegen abgeben: ein sogenannter Pull-Request. Hier handelt es sich aber nicht nur um menschliche Kollegen: Die Pipeline muss auch seine Freigabe geben. Hier ist ein Beispiel, was wir alles damit automatisieren können.
 
 Sobald ein PR erstellt wird, startet die Pipeline.
 Sie prüft zuerst, dass der Code gebaut werden kann: Im Frontend bedeutet das, dass die TypeScript-Typen geprüft werden.

@@ -151,7 +151,7 @@ q-placements: KL
 <!--
 String plus Zahl?
 
-[click] Konkatenation: "53". Und String minus Zahl?
+[click] Konkatenation: "53".
 
 [click] Und jetzt die Frage: Was macht derselbe String mit Minus?
 
@@ -260,7 +260,7 @@ function calculatePrice(items, taxRate) {
 calculatePrice([{ name: 'Book', price: 10 }], '19%');
 ```
 
-```js {7}
+```js {1,7}
 function calculatePrice(items, taxRate) {
   let total = 0;
   items.forEach(item => { total += item.price; });
@@ -453,7 +453,7 @@ class PriceBadgeComponent {
 <!--
 TypeScript hilft nicht nur bei Funktionen, sondern auch bei Komponenten, bspw. in React, Vue oder Angular. Inputs bilden die öffentliche Schnittstelle.
 
-[click] Hier haben wir eine Angular-Komponente mit zwei Inputs: `amount` ist eine required number, und `currency` ist ein optionaler String, der nur "EUR" oder "USD" sein darf.
+[click] Hier haben wir eine Angular-Komponente, die einen Preis mit Währung anzeigt. Sie hat zwei Inputs: `amount` ist eine required number, und `currency` ist ein optionaler String, der nur "EUR" oder "USD" sein darf.
 
 [click] Wenn ein Input als required markiert ist, muss er auch übergeben werden. Ansonsten gibt es einen Fehler.
 
@@ -507,10 +507,10 @@ interface RawUser { vorname: string; nachname: string }
 // ---cut---
 interface User { givenName: string; lastName: string }
 
-function mapUser(user: RawUser): User {
+function mapUser(raw: RawUser): User {
   return {
-    firstName: user.vorname,
-    lastName: user.nachname,
+    firstName: raw.vorname,
+    lastName: raw.nachname,
   };
 }
 ```
@@ -549,9 +549,9 @@ TypeScript ist nicht nur für lokalen Code nützlich — es kann auch API-Grenze
 
 [click] Shared Types bedeutet: Backend und Frontend sprechen dieselbe Sprache.
 
-[click] Viele Teams generieren diese Typen automatisch aus API-Verträgen. OpenAPI und GraphQL-Schemas sind dabei maschinenlesbare Beschreibungen der Schnittstelle: Welche Endpunkte es gibt, welche Felder kommen und welche Typen sie haben. Diese lassen sich wiederum aus dem Backend-Code generieren.
+[click] Viele Teams generieren diese Typen automatisch aus API-Verträgen. OpenAPI und GraphQL-Schemas sind dabei maschinenlesbare Beschreibungen einer Schnittstelle: Welche Endpunkte es gibt, welche Felder kommen und welche Typen sie haben. Diese lassen sich wiederum aus dem Backend-Code generieren.
 
-[click] Wenn das Backend eine Property umbenennt oder entfernt, schlägt der Frontend-Build sofort an — kein manuelles Suchen.
+[click] Wenn das Backend eine Property umbenennt oder entfernt, schlägt der Frontend-Build sofort an — es braucht kein manuelles Suchen.
 
 [click] Damit schließen wir das TypeScript-Kapitel: Typen machen den Code sicherer und lesbarer und helfen, Änderungen früh sichtbar zu machen — lange bevor sie in Produktion gehen.
 -->

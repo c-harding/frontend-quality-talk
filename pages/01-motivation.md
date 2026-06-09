@@ -22,11 +22,11 @@ clicks: 3
 <InconsistentDialogs v-click :show-right-dialog="$clicks >= 2" :red-buttons="$clicks >= 3" />
 
 <!--
-Kurze Frage an euch: Wer hat schon mal in einem Teamprojekt gearbeitet, wo das Frontend irgendwann chaotisch wurde?
+Kurze Frage an euch: Wer hat schon mal bei einem Teamprojekt mitgemacht, in dem das Frontend irgendwann chaotisch wurde?
 
 [click] Hier ein Beispiel: Jemand baut einen Dialog zum Speichern.
 
-[click] Dann baut jemand anderes einen zweiten Dialog — diesmal zum Löschen. Sieht schon anders aus.
+[click] Dann baut die nächste Person einen zweiten Dialog — diesmal zum Löschen. Sieht schon anders aus.
 
 [click] Später wird die Button-Farbe im Lösch-Dialog auf Rot geändert — und die Änderung hat unerwartete Auswirkungen auf den ersten Dialog, was erst viel später auffällt.
 -->

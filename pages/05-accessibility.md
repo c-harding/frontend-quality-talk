@@ -99,7 +99,7 @@ Es gibt zwei Kategorien.
 
 [click] Und situativ: jeder von uns in bestimmten Momenten. Grelles Sonnenlicht, eine Hand voll Kaffee, Ton aus in der Bahn, schlechte Verbindung unterwegs.
 
-[click] Dieselbe Barriere, unterschiedliche Ursachen. Schlechter Farbkontrast schließt jemanden mit Farbsehschwäche aus — und jeden, der im Freien auf sein Handy schaut. Keine Untertitel? Schlecht für Gehörlose, und für jeden, der gerade den Ton nicht aufdrehen kann.
+[click] Dieselbe Barriere, unterschiedliche Ursachen. Schlechter Farbkontrast schließt jemanden mit Farbsehschwäche aus — und jemanden, der im Freien auf sein Handy schaut. Keine Untertitel? Schlecht für Gehörlose, und für jemanden, der gerade den Ton nicht aufdrehen kann.
 
 Das ist der eigentliche Grund, warum Accessibility kein Randthema ist: Wir bauen für uns selbst.
 -->
@@ -185,7 +185,7 @@ hide-footer: true
 </style>
 
 <!--
-Accessibility basiert auf vier Prinzipien, zusammengefasst als POUR. Das ist der Standard der WCAG.
+Accessibility basiert auf vier Prinzipien, zusammengefasst als POUR. Das ist der Standard der WCAG (Web Content Accessibility Guidelines).
 
 [click] Erstens: Perceivable, sprich Wahrnehmbar. Informationen müssen für Menschen mit allen Sinnen zugänglich sein. Alt-Text für Bilder, damit Screen Reader sie beschreiben können. Guter Kontrast, damit man sie auch im Freien liest. Untertitel für Videos, damit Gehörlose folgen können.
 
@@ -193,7 +193,7 @@ Accessibility basiert auf vier Prinzipien, zusammengefasst als POUR. Das ist der
 
 [click] Drittens: Understandable, also Verständlich. Die Struktur und Logik müssen klar sein. Semantisches HTML, das die Bedeutung ausdrückt. Labels für Inputs, damit du weißt, was hineingehört. Aussagekräftige Fehlermeldungen statt kryptischer Codes.
 
-[click] Viertens: Robust. Es muss funktionieren, egal welchen Browser oder welche Assistive-Technology jemand nutzt. Valid HTML, damit alles richtig geparst wird. ARIA korrekt eingesetzt, nicht nur dekorativ. Responsive, damit es auf jedem Screen funktioniert.
+[click] Viertens: Robust. Es muss funktionieren, egal welchen Browser oder welche Assistive-Technology jemand nutzt. Valides HTML, damit alles richtig geparst wird. ARIA korrekt eingesetzt, nicht nur dekorativ. Responsive, damit es auf jedem Screen funktioniert.
 
 Alle vier Prinzipien greifen ineinander. Wer einen verbessert, erleichtert die Nutzung für viele.
 -->
